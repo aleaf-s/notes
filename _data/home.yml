@@ -1,6 +1,4 @@
 navbar_entries:
-  - title: 主页
-    url: /
   - title: 学习笔记
     url: blog.html
 
