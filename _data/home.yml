@@ -16,7 +16,3 @@ navbar_entries:
 footer_entries:
   - title: GitHub
     url: https://github.com/aleaf-s # <-- 已替换成您的 GitHub 地址
-
-
-  - title: RSS
-    url: feed.xml # RSS订阅链接，建议保留
