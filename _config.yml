@@ -1,51 +1,73 @@
-title: Moonwalk
-author: Abhinav Saxena
-url: https://www.abhinavsaxena.com/moonwalk # root address of the site
-description: > # description of the site (multiple lines allowed)
-  Moonwalk is a fast and elegant Jekyll theme with a clean dark mode. It comes with horizontal list (for navbar and footer), card list (for portfolio), and a generic vertical list. It is very easy to modify in case you want to build over it - please see _layouts/home.html to do that.
+# ---------------- #
+#    网站核心设置    #
+# ---------------- #
 
+# 网站的标题，会显示在浏览器标签页和主页大标题上
+title: aleaf # <-- 修改成您想要的标题
+
+# 网站的简短描述，会显示在主页标题下方
+description: >-
+  个人学习记录~。 # <-- 修改成您自己的描述
+
+# 网站的永久链接格式，/:slug 表示文章的网址会是 "域名/文件名"，很简洁，建议保留
 permalink: /:slug
 
-favicon: "./logo.png" # relative path to site's favicon
+# 网站的小图标，您可以将自己的 logo.png 放在仓库根目录，或者暂时删除这行
+favicon: "./logo.png"
 
-twitter:
-    username: abhinav # update or delete this
-    card: summary_large_image
 
-#theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
+# ---------------- #
+#      主题设置      #
+# ---------------- #
+
+# 指定使用 moonwalk 主题
 remote_theme: abhinavs/moonwalk
 
+# 主题的具体配置
 theme_config:
-  appearance: "dark" # can be "light", "dark" or "auto"
-  appearance_toggle: true # if appearance can be switched by user
-  back_home_text: "home.." # customize text for homepage link in post layout
-  date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: true # show blog description
-  show_navbar: true # show horizontal navbar
-  show_footer: true # show footer links in home page,add in _data/home.yml
-  show_copyright: true # show copyright notice in footer
-  # following keys are using to create home layout
-  show_projects: true # show projects as cards, add in _data/home.yml
-  show_blog: true # show blog posts added in _posts
-  show_old_projects: true # show old projects as cards, add in _data/home.yml
-  show_misc_list: false # show generic vertical list for misc details, add _data/home.yml
-  show_reading_time: true # show number of words and reading time in the blog posts
-  show_tags: true # show tags in a blog posts
-  # options for "home" page
+  # 外观设置
+  appearance: "dark" # 默认外观可以是 "light" (亮色), "dark" (暗黑) 或 "auto" (跟随系统)
+  appearance_toggle: true # 是否允许用户在右上角切换亮色/暗黑模式
+
+  # 文章页面返回主页的链接文字
+  back_home_text: "返回主页" # <-- 您可以修改成 "Home" 或其他
+
+  # 日期格式
+  date_format: "%Y-%m-%d" # 年-月-日
+
+  # --- 主页布局控制 ---
+  show_description: true # 在主页标题下显示网站描述
+  show_navbar: true      # 显示顶部的导航栏 (链接在 _data/home.yml 中修改)
+  show_footer: true      # 显示底部的页脚链接 (链接在 _data/home.yml 中修改)
+  show_copyright: true   # 在页脚显示版权信息
+
+  # 下面这些是控制主页显示不同“卡片”区域的开关，我们先只保留博客文章列表
+  show_projects: false      # 不显示“项目”卡片
+  show_blog: true           # **关键：显示 _posts 文件夹里的文章列表**
+  show_old_projects: false  # 不显示“旧项目”卡片
+  show_misc_list: false     # 不显示“杂项”列表
+
+  # --- 文章页面设置 ---
+  show_reading_time: true # 在文章顶部显示阅读时间和字数
+  show_tags: true # 在文章底部显示标签（需要在文章的 Front Matter 中设置 tags）
+
+  # 主页上不同区域的标题文字
   home:
-    title_projects: Portfolio
-    title_misc_list: Details
-    title_blog: Blog
-    title_old_projects: Old Projects
+    title_blog: "最新笔记" # <-- 修改文章列表的标题
 
-soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
 
+# ---------------- #
+#  Jekyll 核心设置  #
+# ---------------- #
+
+# 语法高亮工具
 highlighter: rouge
 
+# Sass (CSS预处理器) 的设置
 sass:
   style: :compressed
 
+# Jekyll 插件列表，这些是主题正常运行所必需的，请勿改动
 plugins:
   - jekyll-feed
   - jekyll-soopr-seo-tag
