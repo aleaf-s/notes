@@ -1,3 +1,146 @@
 ---
-layout: blog
+layout: default
+title: 学习笔记
 ---
+
+<style>
+    .accordion-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .accordion-header {
+        background-color: #161b22; /* 按钮背景色 (暗黑) */
+        color: #c9d1d9; /* 文字颜色 */
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: 1px solid #30363d; /* 边框颜色 */
+        border-radius: 5px;
+        outline: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        transition: background-color 0.4s ease;
+        margin-top: 10px;
+        display: flex; /* 使用 Flexbox 来对齐图标和文字 */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .accordion-header:hover, .accordion-header.active {
+        background-color: #222831; /* 鼠标悬停或激活时变色 */
+    }
+
+    /* 展开/收起图标 (+) (-) */
+    .accordion-header::after {
+        content: '+'; /* 默认是加号 */
+        font-size: 1.5em;
+        color: #58a6ff;
+        font-weight: bold;
+    }
+
+    .accordion-header.active::after {
+        content: "−"; /* 激活时是减号 */
+    }
+
+    .accordion-panel {
+        padding: 0 18px;
+        background-color: #1a1f26;
+        max-height: 0; /* 关键：默认高度为0，即收起状态 */
+        overflow: hidden; /* 隐藏超出的内容 */
+        transition: max-height 0.3s ease-out; /* 平滑的展开/收起动画 */
+        border-left: 1px solid #30363d;
+        border-right: 1px solid #30363d;
+        border-bottom: 1px solid #30363d;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .post-list-in-accordion {
+        list-style-type: none;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .post-list-in-accordion li {
+        margin-bottom: 10px;
+    }
+
+    .post-list-in-accordion a {
+        color: #58a6ff;
+        text-decoration: none;
+        font-size: 1.1em;
+    }
+    
+    .post-list-in-accordion a:hover {
+        text-decoration: underline;
+    }
+
+    .post-date {
+        font-size: 0.9em;
+        color: #8b949e;
+        margin-left: 10px;
+    }
+    
+    .back-link { 
+        margin-top: 2em; 
+        display: inline-block; 
+        color: #58a6ff;
+        text-decoration: none;
+    }
+    .back-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<div class="accordion-container">
+    <h1>学习笔记</h1>
+    <p>这里是我所有的学习笔记，按专栏（分类）进行组织。</p>
+    <hr style="border-color: #30363d;">
+
+    {% for category in site.categories %}
+        <button class="accordion-header">{{ category | first }}</button>
+        <div class="accordion-panel">
+            <ul class="post-list-in-accordion">
+                {% for post in category.last %}
+                    <li>
+                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+
+    <a href="{{ '/' | relative_url }}" class="back-link">&larr; 返回主页</a>
+</div>
+
+
+<script>
+    // 获取所有手风琴的头部按钮
+    var acc = document.getElementsByClassName("accordion-header");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        //为每个按钮添加点击事件
+        acc[i].addEventListener("click", function() {
+            // 切换按钮的 active 状态 (用于改变 +/- 图标)
+            this.classList.toggle("active");
+
+            // 获取按钮后面的内容面板
+            var panel = this.nextElementSibling;
+
+            // 判断面板是否已展开
+            if (panel.style.maxHeight) {
+                // 如果已展开，则收起
+                panel.style.maxHeight = null;
+            } else {
+                // 如果已收起，则展开 (设置为其内容所需的完整高度)
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
