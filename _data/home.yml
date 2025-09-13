@@ -4,9 +4,9 @@ navbar_entries:
   
   - title: 知乎主页
     url: https://www.zhihu.com/people/jun-zi-42-63
-    
+
   - title: 关于我
-    url: about.md
+    url: about
 
 footer_entries:
   - title: GitHub
