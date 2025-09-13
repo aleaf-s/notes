@@ -3,6 +3,8 @@ layout: post
 title: About
 ---
 
-This is an example page!
+一名色彩科学研究生~
 
-Actually, it has the same layout of a post...
+色彩、图像、开发什么都会一点的小菜鸡~
+
+如果有招聘需求欢迎在知乎主页联系我  ：)

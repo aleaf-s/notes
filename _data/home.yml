@@ -1,6 +1,12 @@
 navbar_entries:
-  - title: 学习笔记
+  - title: 专栏
     url: blog.html
+  
+  - title: 知乎主页
+    url: https://www.zhihu.com/people/jun-zi-42-63
+    
+  - title: 关于我
+    url: about.md
 
 footer_entries:
   - title: GitHub
