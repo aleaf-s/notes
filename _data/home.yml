@@ -3,7 +3,7 @@ navbar_entries:
     url: blog.html
   
   - title: 知乎主页
-    url: https://www.zhihu.com/people/jun-zi-42-63
+    url: 
 
   - title: 关于我
     url: about
