@@ -69,6 +69,9 @@ paginate_path: "/page:num/" # 分页的网址格式，例如 yoursite.com/page2/
 # 语法高亮工具
 highlighter: rouge
 
+#开启latex
+mathjax: true
+
 # Sass (CSS预处理器) 的设置
 sass:
   style: :compressed
