@@ -69,10 +69,7 @@ paginate_path: "/page:num/" # 分页的网址格式，例如 yoursite.com/page2/
 highlighter: rouge
 
 #开启latex
-kramdown:
-  input: GFM
-  hard_wrap: false
-  math_engine: mathjax
+markdown: kramdown
 
 # Sass (CSS预处理器) 的设置
 sass:
