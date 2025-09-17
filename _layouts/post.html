@@ -8,11 +8,11 @@ layout: default
 <div class="post-meta">
   <span>发表于：{{ page.date | date: "%Y年%m月%d日" }}</span>
   
-  {%- if page.last_modified_at -%}
+  <!-- {%- if page.last_modified_at -%}
     <span>&nbsp;•&nbsp; 更新于：{{ page.last_modified_at | date: "%Y年%m月%d日" }}</span>
-  {%- endif -%}
+  {%- endif -%} -->
   
-  <!-- <span id="busuanzi_container_page_pv">&nbsp;•&nbsp; 阅读次数：<span id="busuanzi_value_page_pv"></span></span> -->
+  <span id="busuanzi_container_page_pv">&nbsp; &nbsp; 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
 </div>
 
 {{ content }}
