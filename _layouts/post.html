@@ -4,5 +4,16 @@ layout: default
 
 <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
 <h1 class="post-title">{{ page.title }}</h1>
-{% include date_and_social_share.html %}
+
+<div class="post-meta">
+  <span>发表于：{{ page.date | date: "%Y年%m月%d日" }}</span>
+  
+  {%- if page.last_modified_at -%}
+    <span>&nbsp;•&nbsp; 更新于：{{ page.last_modified_at | date: "%Y年%m月%d日" }}</span>
+  {%- endif -%}
+  
+  <span id="busuanzi_container_page_pv">&nbsp;•&nbsp; 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+</div>
+
 {{ content }}
+
