@@ -79,3 +79,9 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-soopr-seo-tag
+
+# 配置相对路径
+# 网站的 URL
+url: "https://aleaf-s.github.io"
+# 你的仓库名称 
+baseurl: "/notes"
