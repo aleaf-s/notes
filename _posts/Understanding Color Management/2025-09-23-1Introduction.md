@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "引言"
+title: "1、引言"
 date: 2025-09-23
 category: Understanding Color Management
 ---
