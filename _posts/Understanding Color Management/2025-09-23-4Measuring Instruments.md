@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "4、测量仪器"
+title: "第四章 测量仪器"
 date: 2025-09-24
 category: Understanding Color Management
 ---
