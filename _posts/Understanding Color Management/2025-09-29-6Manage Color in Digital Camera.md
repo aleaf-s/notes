@@ -72,9 +72,10 @@ category: Understanding Color Management
 
 但请务必注意：扫描仪特性文件的作用是**保证忠实还原**，而**不是美化原稿**。如果您的原始照片本身就对比度很低、颜色暗淡，那么一个准确的扫描仪特性文件只会——分毫不差地——再现这个糟糕的结果！
 
-![alt text](image.png)
 
-![alt text](image-9.png)
+
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-9.png)
 
 
 ## 6.3 从扫描仪到数码相机的范式转移
@@ -83,7 +84,7 @@ category: Understanding Color Management
 
 要理解这种差异，关键在于两者所面对的“输入场景”的**动态范围**截然不同。动态范围，即从最亮到最暗、高光到阴影的光线强度差异。扫描仪面对的是一张照片，而数码相机面对的则是户外的真实场景（图6.3）。
 
-![alt text](image-1.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-1.png)
 
 一张胶片或照片的动态范围，其实已经被大幅压缩过了。一张印刷照片上，最亮的高光与最暗的阴影之间的亮度差异，或许只有200:1，大约相当于7.6档（f-stops）的范围。扫描仪面对的是这种低动态范围的图像，其传感器可以轻松地精确再现。因此，我们可以通过ICC特性文件，创建出与原稿1:1的忠实复制品，因为原稿和复制品的动态范围是相似的。
 
@@ -103,7 +104,7 @@ category: Understanding Color Management
 
 总而言之，将扫描仪那套制作特性文件的流程和工具，简单地延伸到数码相机上是行不通的。管理数码相机的色彩，需要一种完全不同、并且简单得多的方法。
 
-![alt text](image-2.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-2.png)
 
 
 ## 6.4 数码相机的色彩管理
@@ -114,7 +115,7 @@ category: Understanding Color Management
 
 数码相机的核心是一个CCD（电荷耦合器件）感光元件，其上覆盖着由红、绿、蓝滤镜组成的色彩滤镜阵列，如图6.5所示。感光元件上的每一个像素都被一个红色、绿色或蓝色的滤镜所覆盖，这构成了RGB加色法合成色彩的基础。
 
-![alt text](image-3.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-3.png)
 
 不同制造商可能会选择不同的滤镜阵列配置，但其中最常用的一种排列方式是**拜耳滤镜**，该名称源于1975年获得此项技术专利的柯达公司科学家Bryce Bayer。拜耳滤镜阵列中的绿色滤镜数量是红色和蓝色的两倍，这是为了模仿人眼对绿色更为敏感的特性，从而提高捕捉效率。
 
@@ -131,13 +132,13 @@ category: Understanding Color Management
 
 值得注意的是，在这个流程中，我们并**没有**使用一个为相机量身定制的ICC特性文件。相反，相机型号本身的色彩特性和感光元件的特点，已经被整合进了最终图像的色度学特性之中。
 
-![alt text](image-4.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-4.png)
 
 在使用JPEG工作流程时，用户可以通过相机背部的菜单来选择RGB色彩空间，如图6.7所示的尼康D3200数码单反相机。相机提供了sRGB或Adobe RGB的选择。用户选择的这个特性文件，就成为了这台数码相机所拍摄图像的**源特性文件**。
 
 同样需要注意的是，并非所有的JPEG图像生而平等。每个制造商都会使用自己**独有的、专有的渲染方式**来创造他们认为“悦目”的场景再现。这与过去摄影师们偏爱柯达克罗姆（Kodachrome）或富士克罗姆（Fujichrome）胶卷所渲染出的不同影调和观感的方式如出一辙。同样，一张来自尼康或佳能相机的Adobe RGB JPEG图像，也会以一种带有厂家特定风格的方式来渲染场景。
 
-![alt text](image-5.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-5.png)
 
 
 ### 6.4.3 相机RAW处理
@@ -158,7 +159,7 @@ RAW格式允许摄影师自行解读和调整图像，而不是让相机做出�
 
 RAW图像的色彩管理流程是怎样的？其主要组成部分如图6.8所示，这里我们以打开一张尼康D3200的RAW文件（NEF格式）为例。图示为Photoshop的Camera Raw插件。（在早期版本的Photoshop中，Camera Raw是一个插件，如今它已是程序的集成部分，每当RAW文件被打开时就会自动启动。）
 
-![alt text](image-6.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-6.png)
 
 在图6.8中，我们看到右侧有一个“相机配置文件”（Camera Profile）的描述。这个“相机配置文件”**不是一个ICC特性文件**，我们在本文中称之为“相机RAW特性文件”，以区别于ICC特性文件。相机RAW特性文件与RAW文件的内部色彩渲染和处理有关。它实际上是用户喜欢的一套色彩处理方案的体现，如果用户找到了自己喜欢的色彩处理流程，他们可以将其保存为一个“配方”，并按名称调用和存储。
 
@@ -170,9 +171,9 @@ RAW图像的色彩管理流程是怎样的？其主要组成部分如图6.8所�
 
 每个相机制造商都提供一个RAW处理器，例如佳能的Digital Photo Professional或尼康的Capture NX-D，如图6.9所示。第三方程序，如Adobe Photoshop、Adobe Lightroom和Apple Photos，也常用于处理RAW文件，如图6.10所示。重要的是要注意，**每个产品都会应用其自己的解读和处理方式，其结果可能互不相同，也可能与制造商对同一RAW文件的解读不同**。这对于普通消费者来说可能不是问题，但对于寻求一致性的专业用户来说可能是至关重要的。因此，大多数摄影师会使用一个单一的解决方案，也许是Adobe Photoshop的Camera Raw或Adobe Lightroom，并坚持使用这个方案来处理他们的RAW图像。
 
-![alt text](image-7.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-7.png)
 
-![alt text](image-8.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-8.png)
 
 ### 6.4.5 创建一个相机RAW特性文件
 
@@ -180,7 +181,7 @@ RAW图像的色彩管理流程是怎样的？其主要组成部分如图6.8所�
 
 X-Rite ColorChecker Passport就是一个可以创建相机RAW特性文件的产品，如图6.11所示。要创建一个相机RAW特性文件，用户需要拍摄一张ColorChecker Passport的照片，然后将其导入ColorChecker Passport程序，由该程序创建特性文件并将其保存在一个适用于Adobe Photoshop或Lightroom的格式中。
 
-![alt text](image-10.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-10.png)
 
 ### 6.4.6 数码负片 – DNG
 
@@ -195,7 +196,7 @@ RAW文件的一个问题是它们是专有文件，换句话说，每个相机�
 
 DNG规范是一个公开可用的规范，如图6.12a所示。任何人都可以查阅这份文件，看看DNG文件是如何安排的，它有一个文件头，指向图像尺寸的字节位置或图像像素数据的位置等。DNG规范是TIFF 6.0格式的扩展，并与TIFF-EP的ISO标准（标签图像文件格式/电子摄影）兼容。
 
-![alt text](image-11.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-11.png)
 
 DNG被设计为可以容纳制造商特定RAW文件中存储的所有信息，因此没有制造商会因为此规范而感到不便。
 
@@ -218,14 +219,13 @@ JPEG的压缩量可以用一个比率来描述，在此语境下，10:1指的是
 
 JPEG压缩的工作原理是丢弃部分图像信息，因此它被称为“**有损**”压缩方法，因为图像“丢失”了信息。摄影师可以使用一个滑块来直接控制他们希望的压缩程度。通过丢弃大量信息可以创建一个小文件，所以小文件=低质量，而保留更多信息的大文件=高质量，如图6.13a所示。
 
-![alt text](image-12.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-12.png)
 
 JPEG非常高效且实用，然而，过度压缩会导致图像失真和劣化。8x8像素的块状 artifact 是图像被过度JPEG压缩的典型症状。过度JPEG压缩的影响也常见于带有边缘的图像区域，过多的压缩会在边缘周围产生振铃 artifact，如图6.14b所示。
 
 JPEG是一种压缩和存储数码相机图像的有效方法，但为了在相机存储卡上容纳合理数量的图像，图像质量被牺牲了。用户应该意识到在文件较小时，JPEG压缩对图像质量造成的劣化影响。
 
-![alt text](image-13.png)
-
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-13.png)
 
 ### 6.5.2 TIFF无损文件格式
 
@@ -243,7 +243,7 @@ TIFF格式在不损失任何图像质量的情况下，可以被反复保存和�
 
 但在**影棚环境**这种特殊情况下，如图6.15所示，创建一个类似扫描仪的特性文件制作环境是可能的。我们可以使用受控的灯光，以及一个由与被摄物体相似材料制成的测试图表。并且因为拍摄对象不是一个户外场景，其动态范围也不会很大。我们还考虑到，美术品复制或产品目录拍摄等工作，追求的是对原稿的忠实复制。基于所有这些原因，为数码相机创建一个自定义特性文件是一个可行的选择，我们可以采用本章开头描述的标准“扫描仪式”的特性文件制作程序。
 
-![alt text](image-14.png)
+![alt text]({{ site.baseurl }}/assets/Understanding Color Management/6camera/image-14.png)
 
 ## 6.7 总结
 
