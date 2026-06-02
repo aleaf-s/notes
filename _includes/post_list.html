@@ -1,12 +1,15 @@
 {% if site.posts.size > 0 %}
-  <ul>
-    {% for post in site.posts limit:4 %}
-      <li class="post-list-item">
-        <span class="home-date">
-          {{ post.date | date: site.theme_config.date_format }}»
-        </span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
+  <div class="post-list-home">
+    {% for post in site.posts limit:8 %}
+      <article class="post-list-item">
+        <div class="post-list-meta">
+          <span class="home-date">{{ post.date | date: site.theme_config.date_format }}</span>
+          {% if post.category %}
+            <span class="home-category">{{ post.category }}</span>
+          {% endif %}
+        </div>
+        <a class="post-list-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </article>
     {% endfor %}
-  </ul>
+  </div>
 {% endif %}

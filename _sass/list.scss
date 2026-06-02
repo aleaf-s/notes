@@ -55,3 +55,69 @@ ul.horizontal-list {
     }
   }
 }
+
+.post-list-home {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1rem 0 0;
+}
+
+.post-list-item {
+  list-style: none;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--bg-secondary);
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-secondary) 72%, transparent), transparent);
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.post-list-item:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--links) 45%, var(--bg-secondary));
+}
+
+.post-list-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.home-category {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--links) 16%, transparent);
+  color: var(--links);
+}
+
+.post-list-link {
+  display: inline-block;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.post-list-link:hover {
+  text-decoration: underline;
+}
+
+.post-list-home + .back-link,
+.post-list-home + footer {
+  margin-top: 1.5rem;
+}
+
+.home-more-link {
+  margin: 1rem 0 0;
+}
+
+.home-more-link a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-more-link a:hover {
+  text-decoration: underline;
+}
