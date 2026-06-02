@@ -71,6 +71,15 @@ highlighter: rouge
 #开启latex
 markdown: kramdown
 
+# Kramdown 配置，确保数学标记不会被转义并由 MathJax 处理
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  parse_block_html: true
+  hard_wrap: false
+  syntax_highlighter_opts:
+    span: false
+
 # Sass (CSS预处理器) 的设置
 sass:
   style: :compressed
