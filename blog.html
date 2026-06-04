@@ -107,7 +107,7 @@ title: 学习笔记
             <ul class="post-list-in-accordion">
                 {% for post in category.last %}
                     <li>
-                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                         <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
                     </li>
                 {% endfor %}
