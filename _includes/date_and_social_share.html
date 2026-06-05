@@ -3,7 +3,7 @@
     <span class="text-upcase">{{ page.author }}</span> / 
   {% endif %}
   {% if page.date %}
-    <span class="text-upcase">{{ page.date | date: "%B %Y"}}</span>
+    <span class="text-upcase">{{ page.date | date: site.theme_config.date_format }}</span>
   {% endif %}
 
 {% if site.theme_config.show_reading_time == true %}
@@ -11,16 +11,11 @@
   {{ content | number_of_words | minus: 180 }}
   {% endcapture %}
   {% unless words contains '-' %}
-  {{ words | strip | prepend: '(' | append: ' Words, ' }}
-  {{ words | plus: 180 | divided_by: 180 | append: ' Minutes)' }}
+  {{ words | strip | prepend: '(' | append: ' words, ' }}
+  {{ words | plus: 180 | divided_by: 180 | append: ' min read)' }}
   {% endunless %}
 {% endif %}
 </p>
-
-<div class="soopr-btn"
-   data-twitter="SooprCo"
->
-</div>
 
 {% if site.theme_config.show_tags == true %}
   <div class="">

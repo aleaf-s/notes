@@ -1,7 +1,166 @@
-/* --- 优化代码块高亮样式 --- */
-.highlight {
-  /* 使用一个与主题更协调的深灰色/炭黑色背景 */
-  background: #29313b81; 
-  border: 1px solid #444; /* 添加一个细微的边框 */
-  border-radius: 8px; /* 圆角和目录框保持一致 */
+/* Site-specific polish layered on top of the Moonwalk theme. */
+
+.page-post .w {
+  max-width: 880px;
+}
+
+@media (max-width: 760px) {
+  .w {
+    padding: 2.5em 1.25em;
+  }
+}
+
+.post-title {
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.highlight,
+div.highlighter-rouge pre,
+div.highlighter-rouge pre code,
+pre code.highlighter-rouge {
+  background: #29313b81;
+  border-radius: 8px;
+}
+
+div.highlighter-rouge pre,
+pre {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  overflow-x: auto;
+}
+
+p code,
+li code {
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th,
+td {
+  width: auto;
+  min-width: 8rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+}
+
+img {
+  border-radius: 6px;
+  margin: 1.5rem auto;
+}
+
+.MathJax_Display,
+.MathJax,
+.mjx-chtml {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.accordion-container {
+  max-width: 860px;
+  margin: 2.5rem auto;
+}
+
+.accordion-container hr {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.accordion-section {
+  margin-top: 0.75rem;
+}
+
+.accordion-header {
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  transition: background-color 180ms ease, border-color 180ms ease;
+  width: 100%;
+}
+
+.accordion-header:hover,
+.accordion-header:focus-visible,
+.accordion-header.active {
+  border-color: var(--links);
+  outline: none;
+}
+
+.accordion-header::after {
+  color: var(--links);
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 1rem;
+}
+
+.accordion-header.active::after {
+  content: "-";
+}
+
+.accordion-panel {
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0 0 6px 6px;
+  border-top: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+}
+
+.accordion-container.is-enhanced .accordion-panel {
+  max-height: 0;
+}
+
+.post-list-in-accordion {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.post-list-in-accordion li {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  justify-content: space-between;
+  margin: 0.35rem 0;
+}
+
+.post-list-in-accordion a {
+  text-decoration: none;
+}
+
+.post-list-in-accordion a:hover {
+  text-decoration: underline;
+}
+
+.back-link,
+.home-more-link a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.back-link:hover,
+.home-more-link a:hover {
+  text-decoration: underline;
 }

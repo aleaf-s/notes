@@ -3,3 +3,7 @@
 .jekyll-cache
 .sass-cache
 _site
+vendor/bundle
+ruby31
+rubyinstaller-devkit-*.exe
+rubyinstaller.log
