@@ -7,7 +7,16 @@ layout: default
 
 {% include date_and_social_share.html %}
 
-{{ content }}
+<div class="post-reading-layout">
+  <aside class="post-toc" aria-label="本文目录">
+    <div class="post-toc-title">目录</div>
+    <nav class="post-toc-nav" data-post-toc></nav>
+  </aside>
+
+  <article class="post-body" data-post-body>
+    {{ content }}
+  </article>
+</div>
 
 <script src="https://giscus.app/client.js"
         data-repo="aleaf-s/notes"
@@ -24,4 +33,4 @@ layout: default
         crossorigin="anonymous"
         async>
 </script>
-
+<script src="{{ "/assets/js/post-toc.js" | relative_url }}" defer></script>

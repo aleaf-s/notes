@@ -1,12 +1,135 @@
 /* Site-specific polish layered on top of the Moonwalk theme. */
 
 .page-post .w {
+  max-width: 1180px;
+}
+
+.post-reading-layout {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(12rem, 15rem) minmax(0, 880px);
+}
+
+.post-reading-layout.has-no-toc {
+  display: block;
   max-width: 880px;
+}
+
+.post-body {
+  font-size: 1.08rem;
+  line-height: 2.05;
+  min-width: 0;
+}
+
+.post-body > :first-child {
+  margin-top: 0;
+}
+
+.post-toc {
+  align-self: start;
+  border-left: 2px solid rgba(148, 163, 184, 0.3);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding: 0.25rem 0 0.25rem 1rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.post-toc[hidden] {
+  display: none;
+}
+
+.post-toc-title {
+  color: var(--headings);
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+.post-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-toc-item {
+  margin: 0;
+}
+
+.post-toc-link {
+  border-radius: 4px;
+  color: var(--text-secondary);
+  display: block;
+  overflow: hidden;
+  padding: 0.22rem 0.4rem;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-toc-link:hover,
+.post-toc-link:focus-visible {
+  color: var(--links);
+  outline: none;
+  text-decoration: none;
+}
+
+.post-toc-link.is-active {
+  background-color: var(--bg-secondary);
+  color: var(--links);
+  font-weight: 700;
+}
+
+.post-toc-level-3 {
+  padding-left: 0.85rem;
+}
+
+.post-toc-level-4 {
+  padding-left: 1.7rem;
+}
+
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  scroll-margin-top: 1rem;
 }
 
 @media (max-width: 760px) {
   .w {
     padding: 2.5em 1.25em;
+  }
+
+  .post-reading-layout {
+    display: block;
+  }
+
+  .post-toc {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    border-left: 0;
+    margin: 1.5rem 0 2rem;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0 0.75rem;
+    position: static;
+    white-space: nowrap;
+  }
+
+  .post-toc-list {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .post-toc-link {
+    background-color: var(--bg-secondary);
+    max-width: 14rem;
+  }
+
+  .post-toc-level-3,
+  .post-toc-level-4 {
+    padding-left: 0;
   }
 }
 
