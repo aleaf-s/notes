@@ -81,22 +81,27 @@
   font-weight: 700;
 }
 
-.post-toc-level-3 {
+.post-toc-level-2 {
   padding-left: 0.85rem;
 }
 
-.post-toc-level-4 {
+.post-toc-level-3 {
   padding-left: 1.7rem;
 }
 
-.post-toc-level-5 {
+.post-toc-level-4 {
   padding-left: 2.55rem;
 }
 
-.post-toc-level-6 {
+.post-toc-level-5 {
   padding-left: 3.4rem;
 }
 
+.post-toc-level-6 {
+  padding-left: 4.25rem;
+}
+
+.post-body h1,
 .post-body h2,
 .post-body h3,
 .post-body h4,
@@ -139,6 +144,7 @@
     white-space: nowrap;
   }
 
+  .post-toc-level-2,
   .post-toc-level-3,
   .post-toc-level-4,
   .post-toc-level-5,
