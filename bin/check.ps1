@@ -40,6 +40,18 @@ Invoke-Check `
   -Pattern '^paginate:|^paginate_path:' `
   -Paths @("_config.yml")
 
+if (Test-Path "_site") {
+  Invoke-Check `
+    -Name "No Markdown-emphasis fragments inside generated math" `
+    -Pattern '<em>\{|</em>\{' `
+    -Paths @("_site")
+
+  Invoke-Check `
+    -Name "No smart-prime subscripts inside generated inline math" `
+    -Pattern '\$[^\r\n$]*[A-Za-z0-9]’[_A-Za-z0-9]|\$[^\r\n$]*[A-Za-z0-9]''_[^\r\n$]*\$' `
+    -Paths @("_site")
+}
+
 if ($failed) {
   Write-Host "Checks finished with warnings." -ForegroundColor Yellow
   exit 1

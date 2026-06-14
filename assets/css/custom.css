@@ -62,11 +62,10 @@
   border-radius: 4px;
   color: var(--text-secondary);
   display: block;
-  overflow: hidden;
   padding: 0.22rem 0.4rem;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .post-toc-link:hover,
@@ -90,9 +89,19 @@
   padding-left: 1.7rem;
 }
 
+.post-toc-level-5 {
+  padding-left: 2.55rem;
+}
+
+.post-toc-level-6 {
+  padding-left: 3.4rem;
+}
+
 .post-body h2,
 .post-body h3,
-.post-body h4 {
+.post-body h4,
+.post-body h5,
+.post-body h6 {
   scroll-margin-top: 1rem;
 }
 
@@ -125,10 +134,15 @@
   .post-toc-link {
     background-color: var(--bg-secondary);
     max-width: 14rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .post-toc-level-3,
-  .post-toc-level-4 {
+  .post-toc-level-4,
+  .post-toc-level-5,
+  .post-toc-level-6 {
     padding-left: 0;
   }
 }
