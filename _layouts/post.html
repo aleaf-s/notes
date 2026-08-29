@@ -34,3 +34,42 @@ layout: default
         async>
 </script>
 <script src="{{ "/assets/js/post-toc.js" | relative_url }}" defer></script>
+
+<script>
+(function () {
+  var body = document.querySelector("[data-post-body]");
+  var readingTime = document.querySelector("[data-post-reading-time]");
+  if (!body || !readingTime) {
+    return;
+  }
+
+  var text = body.innerText || body.textContent || "";
+
+  // 移除空白字符，统计「有效字符」数
+  var compact = text.replace(/\s+/g, "");
+
+  // 统计中文字符数
+  var cjk = (compact.match(/[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/g) || []).length;
+
+  // 统计英文单词数（连续的字母）
+  var latinWords = (text.match(/[A-Za-z]{2,}/g) || []).length;
+
+  // 统计数字（连续的数字串算1个单位）
+  var digits = (text.match(/\d+/g) || []).length;
+
+  // 有效字数 = 中文字符 + 英文字数 + 数字串；其余符号（如标点）不计
+  var total = cjk + latinWords + digits;
+
+  var countEl = readingTime.querySelector("[data-post-reading-count]");
+  var textEl = readingTime.querySelector("[data-post-reading-text]");
+  if (countEl) {
+    countEl.textContent = "(约 " + total + " 字, ";
+  }
+  if (textEl) {
+    // 按每分钟 300 字估算阅读时间
+    var minutes = Math.max(1, Math.round(total / 300));
+    textEl.textContent = minutes + " 分钟阅读)";
+  }
+})();
+</script>
+

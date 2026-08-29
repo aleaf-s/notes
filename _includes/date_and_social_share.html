@@ -7,13 +7,10 @@
   {% endif %}
 
 {% if site.theme_config.show_reading_time == true %}
-  {% capture words %}
-  {{ content | number_of_words | minus: 180 }}
-  {% endcapture %}
-  {% unless words contains '-' %}
-  {{ words | strip | prepend: '(' | append: ' words, ' }}
-  {{ words | plus: 180 | divided_by: 180 | append: ' min read)' }}
-  {% endunless %}
+  <span class="post-reading-time" data-post-reading-time data-post-body-reader>
+    <span data-post-reading-text>计算中…</span>
+    <span data-post-reading-count></span>
+  </span>
 {% endif %}
 </p>
 
@@ -24,3 +21,4 @@
     {% endfor %}
   </div>
 {% endif %}
+
