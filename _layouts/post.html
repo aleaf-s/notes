@@ -2,8 +2,12 @@
 layout: default
 ---
 
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar" data-reading-progress></div>
+</div>
+
 <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
-<h1 class="post-title">{{ page.title }}</h1>
+<h1 class="post-title" tabindex="-1">{{ page.title }}</h1>
 
 {% include date_and_social_share.html %}
 
@@ -17,6 +21,13 @@ layout: default
     {{ content }}
   </article>
 </div>
+
+<button class="back-to-top" type="button" data-back-to-top aria-label="返回页面顶部" aria-hidden="true" tabindex="-1">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+    <path d="M12 19V5m-6 6 6-6 6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+  </svg>
+  <span class="back-to-top-label">顶部</span>
+</button>
 
 <script src="https://giscus.app/client.js"
         data-repo="aleaf-s/notes"
@@ -34,6 +45,7 @@ layout: default
         async>
 </script>
 <script src="{{ "/assets/js/post-toc.js" | relative_url }}" defer></script>
+<script src="{{ "/assets/js/reading-tools.js" | relative_url }}" defer></script>
 
 <script>
 (function () {
@@ -72,4 +84,3 @@ layout: default
   }
 })();
 </script>
-
