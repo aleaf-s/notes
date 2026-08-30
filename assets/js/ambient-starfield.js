@@ -42,9 +42,9 @@
 
     return {
       accent: Math.random() > 0.72,
-      alpha: randomBetween(0.38, 0.86),
+      alpha: randomBetween(0.24, 0.62),
       phase: randomBetween(0, Math.PI * 2),
-      radius: randomBetween(1.05, 2.9),
+      radius: randomBetween(0.72, 1.9),
       side: side,
       speed: randomBetween(0.28, 0.72),
       driftVx: driftVx,
@@ -202,8 +202,8 @@
           context.moveTo(positions[first].x, positions[first].y);
           context.lineTo(positions[second].x, positions[second].y);
           context.strokeStyle = nodes[first].accent ? colors.accent : colors.node;
-          context.globalAlpha = Math.max(0.04, (1 - distance / disconnectDistance) * 0.36);
-          context.lineWidth = 0.9;
+          context.globalAlpha = Math.max(0.025, (1 - distance / disconnectDistance) * 0.22);
+          context.lineWidth = 0.62;
           context.stroke();
         }
       }
