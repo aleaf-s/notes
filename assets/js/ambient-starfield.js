@@ -202,7 +202,7 @@
           context.moveTo(positions[first].x, positions[first].y);
           context.lineTo(positions[second].x, positions[second].y);
           context.strokeStyle = nodes[first].accent ? colors.accent : colors.node;
-          context.globalAlpha = Math.max(0.025, (1 - distance / disconnectDistance) * 0.22);
+          context.globalAlpha = Math.max(0.025, (1 - distance / disconnectDistance) * 0.18);
           context.lineWidth = 0.62;
           context.stroke();
         }
