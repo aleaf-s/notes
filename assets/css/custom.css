@@ -5,6 +5,10 @@
   z-index: 1;
 }
 
+.page-content > .w {
+  padding-top: 2rem;
+}
+
 .ambient-starfield {
   --ambient-left-width: 0px;
   --ambient-right-width: 0px;
@@ -23,10 +27,10 @@
 
 .ambient-starfield::before,
 .ambient-starfield::after {
-  animation: ambient-drift 18s ease-in-out infinite alternate;
+  animation: ambient-drift 13s ease-in-out infinite alternate;
   content: "";
-  filter: blur(8px);
-  opacity: 0.42;
+  filter: blur(6px);
+  opacity: 0.68;
   position: absolute;
   top: 5%;
   bottom: 5%;
@@ -34,8 +38,8 @@
 
 .ambient-starfield::before {
   background:
-    radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--ambient-node) 16%, transparent), transparent 48%),
-    radial-gradient(circle at 72% 72%, color-mix(in srgb, var(--ambient-accent) 12%, transparent), transparent 52%);
+    radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--ambient-node) 24%, transparent), transparent 48%),
+    radial-gradient(circle at 72% 72%, color-mix(in srgb, var(--ambient-accent) 20%, transparent), transparent 52%);
   left: 0;
   width: var(--ambient-left-width);
 }
@@ -43,8 +47,8 @@
 .ambient-starfield::after {
   animation-direction: alternate-reverse;
   background:
-    radial-gradient(circle at 78% 26%, color-mix(in srgb, var(--ambient-accent) 13%, transparent), transparent 48%),
-    radial-gradient(circle at 28% 76%, color-mix(in srgb, var(--ambient-node) 15%, transparent), transparent 52%);
+    radial-gradient(circle at 78% 26%, color-mix(in srgb, var(--ambient-accent) 22%, transparent), transparent 48%),
+    radial-gradient(circle at 28% 76%, color-mix(in srgb, var(--ambient-node) 23%, transparent), transparent 52%);
   right: 0;
   width: var(--ambient-right-width);
 }
@@ -59,10 +63,10 @@
 
 @keyframes ambient-drift {
   from {
-    transform: translate3d(0, -1.5%, 0) scale(0.98);
+    transform: translate3d(-2%, -3%, 0) scale(0.97);
   }
   to {
-    transform: translate3d(0, 1.5%, 0) scale(1.03);
+    transform: translate3d(2%, 3%, 0) scale(1.05);
   }
 }
 
@@ -90,18 +94,20 @@ a:hover {
 }
 
 .reading-progress {
-  background-color: color-mix(in srgb, var(--text) 12%, transparent);
-  height: 4px;
+  background-color: color-mix(in srgb, var(--text) 18%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--bg) 70%, transparent);
+  height: 5px;
   left: 0;
   pointer-events: none;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .reading-progress-bar {
-  background: linear-gradient(90deg, var(--links), var(--headings));
+  background: linear-gradient(90deg, var(--links), var(--ambient-accent), var(--headings));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--links) 65%, transparent);
   height: 100%;
   transform: scaleX(0);
   transform-origin: left center;
@@ -110,38 +116,51 @@ a:hover {
 
 .back-to-top {
   align-items: center;
-  background-color: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
-  border: 1px solid color-mix(in srgb, var(--links) 34%, var(--bg-secondary));
-  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  background-color: color-mix(in srgb, var(--bg) 84%, transparent);
+  border: 1px solid color-mix(in srgb, var(--links) 42%, var(--border));
+  border-radius: 14px;
   bottom: 1.5rem;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
   color: var(--text);
   cursor: pointer;
   display: flex;
   font: inherit;
-  font-size: 0.82rem;
-  font-weight: 700;
-  gap: 0.2rem;
+  height: 48px;
+  justify-content: center;
   opacity: 0;
-  padding: 0.62rem 0.85rem 0.62rem 0.7rem;
+  padding: 0;
   pointer-events: none;
   position: fixed;
   right: 1.5rem;
-  transform: translateY(0.75rem);
+  transform: translateY(0.75rem) scale(0.94);
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, opacity 160ms ease, transform 160ms ease;
-  z-index: 900;
+  width: 48px;
+  z-index: 9998;
 }
 
 .back-to-top.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .back-to-top:hover {
-  background-color: var(--bg-secondary);
+  background-color: color-mix(in srgb, var(--links) 12%, var(--bg));
   border-color: var(--links);
   color: var(--links);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.back-to-top-label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .page-post .w {
@@ -275,7 +294,7 @@ a:hover {
 
 @media (max-width: 760px) {
   .w {
-    padding: 2.5em 1.25em;
+    padding: 1.5rem 1.25rem 2.5rem;
   }
 
   .post-reading-layout {
@@ -317,19 +336,9 @@ a:hover {
 
   .back-to-top {
     bottom: 1rem;
-    padding: 0.68rem;
+    height: 44px;
     right: 1rem;
-  }
-
-  .back-to-top-label {
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+    width: 44px;
   }
 }
 
@@ -381,12 +390,32 @@ img {
   margin: 1.5rem auto;
 }
 
-.MathJax_Display,
-.MathJax,
-.mjx-chtml {
+.post-body .MathJax_Display,
+.post-body mjx-container[display="true"] {
+  box-sizing: border-box;
+  display: block !important;
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
+  padding: 0.3rem 0;
+}
+
+.post-body span.MathJax.MathJax_FullWidth {
+  box-sizing: border-box;
+  display: block !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100% !important;
+}
+
+.post-body .MathJax:not(.MathJax_FullWidth),
+.post-body mjx-container:not([display="true"]) {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
 }
 
 .accordion-container {

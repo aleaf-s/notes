@@ -36,13 +36,13 @@
 
     return {
       accent: Math.random() > 0.72,
-      alpha: randomBetween(0.2, 0.58),
+      alpha: randomBetween(0.38, 0.86),
       phase: randomBetween(0, Math.PI * 2),
-      radius: randomBetween(0.8, 2.15),
+      radius: randomBetween(1.05, 2.9),
       side: side,
-      speed: randomBetween(0.12, 0.32),
-      vx: randomBetween(-0.06, 0.06),
-      vy: randomBetween(-0.08, 0.08),
+      speed: randomBetween(0.28, 0.72),
+      vx: randomBetween(-0.18, 0.18),
+      vy: randomBetween(-0.2, 0.2),
       x: randomBetween(minX, Math.max(minX + 1, maxX)),
       y: randomBetween(18, Math.max(19, viewportHeight - 18))
     };
@@ -56,7 +56,7 @@
     }
 
     var sideArea = (leftLimit + viewportWidth - rightLimit) * viewportHeight;
-    var total = Math.max(18, Math.min(42, Math.round(sideArea / 30000)));
+    var total = Math.max(58, Math.min(112, Math.round(sideArea / 10500)));
     var leftShare = leftLimit / Math.max(1, leftLimit + viewportWidth - rightLimit);
     var leftCount = Math.round(total * leftShare);
 
@@ -91,15 +91,15 @@
   }
 
   function nodePosition(node, scrollProgress) {
-    var parallax = (pointer.x / Math.max(1, viewportWidth) - 0.5) * (node.side === "left" ? -5 : 5);
+    var parallax = (pointer.x / Math.max(1, viewportWidth) - 0.5) * (node.side === "left" ? -22 : 22);
     var x = node.x + parallax;
-    var y = node.y + Math.sin(scrollProgress * Math.PI * 2 + node.phase) * 7;
+    var y = node.y + Math.sin(scrollProgress * Math.PI * 2 + node.phase) * 24;
     var dx = x - pointer.x;
     var dy = y - pointer.y;
     var distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance > 0 && distance < 120) {
-      var force = (120 - distance) / 12;
+    if (distance > 0 && distance < 180) {
+      var force = (180 - distance) / 5.5;
       x += (dx / distance) * force;
       y += (dy / distance) * force;
     }
@@ -161,13 +161,13 @@
         var dy = positions[first].y - positions[second].y;
         var distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < 112) {
+        if (distance < 148) {
           context.beginPath();
           context.moveTo(positions[first].x, positions[first].y);
           context.lineTo(positions[second].x, positions[second].y);
           context.strokeStyle = nodes[first].accent ? colors.accent : colors.node;
-          context.globalAlpha = (1 - distance / 112) * 0.16;
-          context.lineWidth = 0.7;
+          context.globalAlpha = (1 - distance / 148) * 0.3;
+          context.lineWidth = 0.9;
           context.stroke();
         }
       }
