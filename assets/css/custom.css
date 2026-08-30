@@ -25,49 +25,12 @@
   opacity: 1;
 }
 
-.ambient-starfield::before,
-.ambient-starfield::after {
-  animation: ambient-drift 13s ease-in-out infinite alternate;
-  content: "";
-  filter: blur(6px);
-  opacity: 0.68;
-  position: absolute;
-  top: 5%;
-  bottom: 5%;
-}
-
-.ambient-starfield::before {
-  background:
-    radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--ambient-node) 24%, transparent), transparent 48%),
-    radial-gradient(circle at 72% 72%, color-mix(in srgb, var(--ambient-accent) 20%, transparent), transparent 52%);
-  left: 0;
-  width: var(--ambient-left-width);
-}
-
-.ambient-starfield::after {
-  animation-direction: alternate-reverse;
-  background:
-    radial-gradient(circle at 78% 26%, color-mix(in srgb, var(--ambient-accent) 22%, transparent), transparent 48%),
-    radial-gradient(circle at 28% 76%, color-mix(in srgb, var(--ambient-node) 23%, transparent), transparent 52%);
-  right: 0;
-  width: var(--ambient-right-width);
-}
-
 .ambient-starfield-canvas {
   display: block;
   height: 100%;
   position: relative;
   width: 100%;
   z-index: 1;
-}
-
-@keyframes ambient-drift {
-  from {
-    transform: translate3d(-2%, -3%, 0) scale(0.97);
-  }
-  to {
-    transform: translate3d(2%, 3%, 0) scale(1.05);
-  }
 }
 
 @media (max-width: 1199px) {
@@ -550,11 +513,6 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .ambient-starfield {
     transition: none;
-  }
-
-  .ambient-starfield::before,
-  .ambient-starfield::after {
-    animation: none;
   }
 
   .back-to-top,

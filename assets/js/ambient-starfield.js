@@ -10,6 +10,7 @@
   var context = canvas.getContext("2d");
   var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   var nodes = [];
+  var connections = new Set();
   var frameId = 0;
   var lastFrame = 0;
   var viewportWidth = 0;
@@ -17,8 +18,11 @@
   var leftLimit = 0;
   var rightLimit = 0;
   var isActive = false;
-  var pointer = { x: -1000, y: -1000 };
+  var pointer = { active: false, x: -1000, y: -1000 };
   var colors = { node: "#4f46e5", accent: "#0891b2" };
+  var connectDistance = 132;
+  var disconnectDistance = 168;
+  var pointerDistance = 260;
 
   function randomBetween(min, max) {
     return min + Math.random() * (max - min);
@@ -33,6 +37,8 @@
   function createNode(side) {
     var minX = side === "left" ? 18 : rightLimit + 14;
     var maxX = side === "left" ? leftLimit - 14 : viewportWidth - 18;
+    var driftVx = randomBetween(-0.34, 0.34);
+    var driftVy = randomBetween(-0.36, 0.36);
 
     return {
       accent: Math.random() > 0.72,
@@ -41,8 +47,10 @@
       radius: randomBetween(1.05, 2.9),
       side: side,
       speed: randomBetween(0.28, 0.72),
-      vx: randomBetween(-0.18, 0.18),
-      vy: randomBetween(-0.2, 0.2),
+      driftVx: driftVx,
+      driftVy: driftVy,
+      vx: driftVx,
+      vy: driftVy,
       x: randomBetween(minX, Math.max(minX + 1, maxX)),
       y: randomBetween(18, Math.max(19, viewportHeight - 18))
     };
@@ -50,13 +58,14 @@
 
   function rebuildNodes() {
     nodes = [];
+    connections.clear();
 
     if (!isActive) {
       return;
     }
 
     var sideArea = (leftLimit + viewportWidth - rightLimit) * viewportHeight;
-    var total = Math.max(58, Math.min(112, Math.round(sideArea / 10500)));
+    var total = Math.max(128, Math.min(260, Math.round(sideArea / 4700)));
     var leftShare = leftLimit / Math.max(1, leftLimit + viewportWidth - rightLimit);
     var leftCount = Math.round(total * leftShare);
 
@@ -91,23 +100,37 @@
   }
 
   function nodePosition(node, scrollProgress) {
-    var parallax = (pointer.x / Math.max(1, viewportWidth) - 0.5) * (node.side === "left" ? -22 : 22);
+    var pointerRatio = pointer.active ? pointer.x / Math.max(1, viewportWidth) : 0.5;
+    var parallax = (pointerRatio - 0.5) * (node.side === "left" ? -28 : 28);
     var x = node.x + parallax;
     var y = node.y + Math.sin(scrollProgress * Math.PI * 2 + node.phase) * 24;
-    var dx = x - pointer.x;
-    var dy = y - pointer.y;
-    var distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance > 0 && distance < 180) {
-      var force = (180 - distance) / 5.5;
-      x += (dx / distance) * force;
-      y += (dy / distance) * force;
-    }
 
     return { x: x, y: y };
   }
 
   function updateNode(node, step) {
+    if (pointer.active) {
+      var pointerDx = node.x - pointer.x;
+      var pointerDy = node.y - pointer.y;
+      var pointerGap = Math.sqrt(pointerDx * pointerDx + pointerDy * pointerDy);
+
+      if (pointerGap > 0 && pointerGap < pointerDistance) {
+        var influence = 1 - pointerGap / pointerDistance;
+        var force = influence * influence * 0.115 * step;
+        node.vx += (pointerDx / pointerGap) * force;
+        node.vy += (pointerDy / pointerGap) * force;
+      }
+    }
+
+    var speed = Math.sqrt(node.vx * node.vx + node.vy * node.vy);
+    var maxSpeed = 1.45;
+    if (speed > maxSpeed) {
+      node.vx = node.vx / speed * maxSpeed;
+      node.vy = node.vy / speed * maxSpeed;
+    }
+
+    node.vx += (node.driftVx - node.vx) * 0.008 * step;
+    node.vy += (node.driftVy - node.vy) * 0.008 * step;
     node.x += node.vx * step;
     node.y += node.vy * step;
 
@@ -116,11 +139,13 @@
 
     if (node.x <= minX || node.x >= maxX) {
       node.vx *= -1;
+      node.driftVx *= -1;
       node.x = Math.max(minX, Math.min(maxX, node.x));
     }
 
     if (node.y <= 14 || node.y >= viewportHeight - 14) {
       node.vy *= -1;
+      node.driftVy *= -1;
       node.y = Math.max(14, Math.min(viewportHeight - 14, node.y));
     }
   }
@@ -161,12 +186,23 @@
         var dy = positions[first].y - positions[second].y;
         var distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < 148) {
+        var connectionKey = first + ":" + second;
+        var isConnected = connections.has(connectionKey);
+
+        if (isConnected && distance > disconnectDistance) {
+          connections.delete(connectionKey);
+          isConnected = false;
+        } else if (!isConnected && distance <= connectDistance) {
+          connections.add(connectionKey);
+          isConnected = true;
+        }
+
+        if (isConnected) {
           context.beginPath();
           context.moveTo(positions[first].x, positions[first].y);
           context.lineTo(positions[second].x, positions[second].y);
           context.strokeStyle = nodes[first].accent ? colors.accent : colors.node;
-          context.globalAlpha = (1 - distance / 148) * 0.3;
+          context.globalAlpha = Math.max(0.04, (1 - distance / disconnectDistance) * 0.36);
           context.lineWidth = 0.9;
           context.stroke();
         }
@@ -204,10 +240,12 @@
     start();
   });
   window.addEventListener("pointermove", function (event) {
+    pointer.active = true;
     pointer.x = event.clientX;
     pointer.y = event.clientY;
   }, { passive: true });
   window.addEventListener("pointerleave", function () {
+    pointer.active = false;
     pointer.x = -1000;
     pointer.y = -1000;
   });
