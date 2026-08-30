@@ -63,7 +63,7 @@ if (Test-Path "_site") {
 
   Invoke-Check `
     -Name "No smart-prime subscripts inside generated inline math" `
-    -Pattern '\$[^\r\n$]*[A-Za-z0-9]\x2019[_A-Za-z0-9]|\$[^\r\n$]*[A-Za-z0-9]\x27_[^\r\n$]*\$' `
+    -Pattern '\$[^\r\n$]*[A-Za-z0-9]\x{2019}[_A-Za-z0-9]|\$[^\r\n$]*[A-Za-z0-9]\x{27}_[^\r\n$]*\$' `
     -Paths @("_site")
 }
 
