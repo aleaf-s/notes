@@ -13,13 +13,43 @@ function Invoke-Check {
     [string[]] $Paths
   )
 
-  $matches = & rg --pcre2 -n $Pattern @Paths
-  if ($LASTEXITCODE -eq 0) {
+  $ripgrep = Get-Command rg -ErrorAction SilentlyContinue
+  if ($null -ne $ripgrep) {
+    $matches = & $ripgrep.Source --pcre2 -n $Pattern @Paths
+    $searchExitCode = $LASTEXITCODE
+  } else {
+    # PCRE2 and .NET spell braced Unicode escapes differently.
+    $dotNetPattern = $Pattern.Replace('\x{2019}', '\u2019').Replace('\x{27}', '\u0027')
+    $textExtensions = @(
+      ".css", ".htm", ".html", ".js", ".json", ".md", ".scss",
+      ".svg", ".txt", ".xml", ".yaml", ".yml"
+    )
+    $files = foreach ($path in $Paths) {
+      if (Test-Path -LiteralPath $path -PathType Container) {
+        Get-ChildItem -LiteralPath $path -Recurse -File |
+          Where-Object { $textExtensions -contains $_.Extension.ToLowerInvariant() }
+      } elseif (Test-Path -LiteralPath $path -PathType Leaf) {
+        Get-Item -LiteralPath $path
+      }
+    }
+
+    $matches = @(
+      foreach ($file in $files) {
+        Select-String -LiteralPath $file.FullName -Pattern $dotNetPattern | ForEach-Object {
+          $relativePath = [System.IO.Path]::GetRelativePath($root, $_.Path)
+          "${relativePath}:$($_.LineNumber):$($_.Line)"
+        }
+      }
+    )
+    $searchExitCode = if ($matches.Count -gt 0) { 0 } else { 1 }
+  }
+
+  if ($searchExitCode -eq 0) {
     Write-Host "[warn] $Name" -ForegroundColor Yellow
     $matches | ForEach-Object { Write-Host "  $_" }
     $script:failed = $true
-  } elseif ($LASTEXITCODE -gt 1) {
-    throw "ripgrep failed while running: $Name"
+  } elseif ($searchExitCode -gt 1) {
+    throw "Search failed while running: $Name"
   } else {
     Write-Host "[ok] $Name" -ForegroundColor Green
   }
