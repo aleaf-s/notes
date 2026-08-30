@@ -2,6 +2,9 @@
 <html lang="{{ page.lang | default: "zh-CN" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
   {%- include head.html -%}
   <body>
+    <div class="ambient-starfield" data-ambient-starfield aria-hidden="true">
+      <canvas class="ambient-starfield-canvas" data-ambient-starfield-canvas></canvas>
+    </div>
     <main class="page-content page-{{ page.layout | default: "default" }}" aria-label="Content">
       <div class="w">
         {{ content }}
@@ -17,5 +20,6 @@
         </div>
       </div>
     </main>
+    <script src="{{ "/assets/js/ambient-starfield.js" | relative_url }}" defer></script>
   </body>
 </html>

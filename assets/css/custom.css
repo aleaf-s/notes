@@ -1,5 +1,77 @@
 /* Site-specific polish layered on top of the Moonwalk theme. */
 
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ambient-starfield {
+  --ambient-left-width: 0px;
+  --ambient-right-width: 0px;
+  inset: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  transition: opacity 600ms ease;
+  z-index: 0;
+}
+
+.ambient-starfield.is-active {
+  opacity: 1;
+}
+
+.ambient-starfield::before,
+.ambient-starfield::after {
+  animation: ambient-drift 18s ease-in-out infinite alternate;
+  content: "";
+  filter: blur(8px);
+  opacity: 0.42;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+}
+
+.ambient-starfield::before {
+  background:
+    radial-gradient(circle at 18% 30%, color-mix(in srgb, var(--ambient-node) 16%, transparent), transparent 48%),
+    radial-gradient(circle at 72% 72%, color-mix(in srgb, var(--ambient-accent) 12%, transparent), transparent 52%);
+  left: 0;
+  width: var(--ambient-left-width);
+}
+
+.ambient-starfield::after {
+  animation-direction: alternate-reverse;
+  background:
+    radial-gradient(circle at 78% 26%, color-mix(in srgb, var(--ambient-accent) 13%, transparent), transparent 48%),
+    radial-gradient(circle at 28% 76%, color-mix(in srgb, var(--ambient-node) 15%, transparent), transparent 52%);
+  right: 0;
+  width: var(--ambient-right-width);
+}
+
+.ambient-starfield-canvas {
+  display: block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+@keyframes ambient-drift {
+  from {
+    transform: translate3d(0, -1.5%, 0) scale(0.98);
+  }
+  to {
+    transform: translate3d(0, 1.5%, 0) scale(1.03);
+  }
+}
+
+@media (max-width: 1199px) {
+  .ambient-starfield {
+    display: none;
+  }
+}
+
 :where(a, button, [tabindex]):focus-visible {
   border-radius: 4px;
   outline: 3px solid color-mix(in srgb, var(--links) 78%, white);
@@ -100,7 +172,7 @@ a:hover {
 
 .post-toc {
   align-self: start;
-  border-left: 2px solid rgba(148, 163, 184, 0.42);
+  border-left: 2px solid var(--border);
   font-size: 0.92rem;
   line-height: 1.45;
   max-height: calc(100vh - 3rem);
@@ -211,7 +283,7 @@ a:hover {
   }
 
   .post-toc {
-    border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    border-bottom: 1px solid var(--border);
     border-left: 0;
     margin: 1.5rem 0 2rem;
     max-height: none;
@@ -270,13 +342,13 @@ a:hover {
 div.highlighter-rouge pre,
 div.highlighter-rouge pre code,
 pre code.highlighter-rouge {
-  background: #29313b81;
+  background: var(--code-bg);
   border-radius: 8px;
 }
 
 div.highlighter-rouge pre,
 pre {
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--border);
   overflow-x: auto;
 }
 
@@ -299,7 +371,7 @@ th,
 td {
   width: auto;
   min-width: 8rem;
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--border);
   padding: 0.45rem 0.65rem;
   vertical-align: top;
 }
@@ -323,7 +395,7 @@ img {
 }
 
 .accordion-container hr {
-  border-color: rgba(148, 163, 184, 0.3);
+  border-color: var(--border);
 }
 
 .accordion-section {
@@ -333,7 +405,7 @@ img {
 .accordion-header {
   align-items: center;
   background-color: var(--bg-secondary);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text);
   cursor: pointer;
@@ -370,7 +442,7 @@ img {
 
 .accordion-panel {
   background-color: var(--bg-secondary);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--border);
   border-radius: 0 0 6px 6px;
   border-top: 0;
   overflow: hidden;
@@ -447,6 +519,15 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ambient-starfield {
+    transition: none;
+  }
+
+  .ambient-starfield::before,
+  .ambient-starfield::after {
+    animation: none;
+  }
+
   .back-to-top,
   a {
     transition: none;

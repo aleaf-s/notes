@@ -65,7 +65,7 @@ ul.horizontal-list {
 .post-list-item {
   list-style: none;
   padding: 1rem 1.1rem;
-  border: 1px solid var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: 0.9rem;
   background: linear-gradient(180deg, color-mix(in srgb, var(--bg-secondary) 72%, transparent), transparent);
   transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
@@ -73,7 +73,7 @@ ul.horizontal-list {
 
 .post-list-item:hover {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--links) 45%, var(--bg-secondary));
+  border-color: color-mix(in srgb, var(--links) 55%, var(--border));
 }
 
 .post-list-meta {

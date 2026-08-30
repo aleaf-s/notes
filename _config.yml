@@ -23,7 +23,7 @@ favicon: "./logo.png"
 # 主题的具体配置
 theme_config:
   # 外观设置
-  appearance: "dark" # 默认外观可以是 "light" (亮色), "dark" (暗黑) 或 "auto" (跟随系统)
+  appearance: "light" # 默认外观可以是 "light" (亮色), "dark" (暗黑) 或 "auto" (跟随系统)
   appearance_toggle: true # 是否允许用户在右上角切换亮色/暗黑模式
 
   # 文章页面返回主页的链接文字
