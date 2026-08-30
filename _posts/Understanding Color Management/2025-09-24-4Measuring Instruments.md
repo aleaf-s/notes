@@ -49,7 +49,7 @@ category: Understanding Color Management
 
 根据操作方式和可测量的内容，仪器可分为三大类型，见表4.1。**密度计**是一种基础的质量控制测量设备，专为摄影和印刷应用而优化。密度计可用于测量胶片、印版和印刷样张。密度计测量的是密度。密度不是一个CIE色彩指标，因此密度测量法在色彩管理中仅被间接使用，密度计可用于达到受控或标准的印刷条件，也可用于测量诸如网点面积和网点增益等指标。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image.png)
+![第四章 测量仪器 — 图 1]({{ '/assets/Understanding Color Management/4Measuring Instruments/image.png' | relative_url }})
 
 **色度计**可以测量和计算CIE类型的色彩指标，并可用于测量一个样本的XYZ值。色度计通常也报告从XYZ派生出的测量值，例如Yxy和L\*a\*b\*。色度计是轻便、紧凑、可靠且价格低廉的设备。在色彩管理中，色度计用于测量台式机显示器、笔记本电脑屏幕、平板显示器、投影仪以及平板电脑和智能手机设备。
 
@@ -84,7 +84,7 @@ category: Understanding Color Management
 
 分光光度计可以数学方式创建如图表所示的滤光片响应，因此可以提供色度计或密度计的所有测量值，但反之则不行。在用分光光度计测量XYZ的情况下，它可以被称为**光谱色度计**。当用分光光度计计算密度时，它通常被称为**光谱密度计**。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-1.png)
+![第四章 测量仪器 — 图 2]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-1.webp' | relative_url }})
 
 ## 4.4 密度计
 
@@ -92,7 +92,7 @@ category: Understanding Color Management
 
 测量密度有两种方法：使用带有滤光片的密度计，即**滤光片式密度计**；或者，如今更常见的是，由**光谱密度计**通过数学计算得出。密度计可用于手动读取透射或反射的单个样本；传统的密度计（非光谱设备）如图4.2所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-2.png)
+![第四章 测量仪器 — 图 3]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-2.webp' | relative_url }})
 
 ### 4.4.1 密度方程
 
@@ -112,7 +112,7 @@ $$D = \log({I_i}/{I_t}) \quad \text{或} \quad D = \log({I_i}/{I_r})$$
 
 密度计总是使用红、绿、蓝滤光片。然而，当它们被用于测量互补色（青、品红和黄）时，密度计中的标签可能被标记为C-M-Y-K。历史上，滤光轮是手动切换的，但现代一代的密度计（和光谱密度计）的更常见做法是在设备软件内部执行此功能。一个仪器可以显示通过所有“滤光片”的密度，如图4.3a所示，或者自动只显示样本中主要通道的密度，如图4.3b所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-3.png)
+![第四章 测量仪器 — 图 4]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-3.webp' | relative_url }})
 
 为了确保所有仪器报告相同的测量值，美国国家标准协会（ANSI）和国际标准化组织（ISO）已经指定了一系列响应曲线（称为状态分类）。这些确保了密度读数的一致性。主要的频谱响应是状态A和M，用于照相用途；状态T，用于北美图形艺术；以及状态E，用于欧洲图形艺术。这些状态响应是通过使用不同形状的曲线来实现的。所选的状态通常显示在仪器的显示屏上；例如，见图4.3a右下角显示的ISO T。
 
@@ -134,19 +134,19 @@ $$\text{网点面积} = \frac{1-10^{-D_t}}{1-10^{-D_s}} \times 100$$
 
 虽然密度传统上用于印刷车间的操作，但所有新安装的印刷机的趋势是，通过能够提供CIE色彩指标的仪器进行控制。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-4.png)
+![第四章 测量仪器 — 图 5]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-4.webp' | relative_url }})
 
 ## 4.5 色度计
 
 色度计是紧凑、轻便且相对便宜的色彩测量仪器。在当今的色彩管理场景中，色度计的主要用途是为所有形式的平板显示器以及近来的移动设备制作特性文件，如图4.5所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-5.png)
+![第四章 测量仪器 — 图 6]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-5.webp' | relative_url }})
 
 一位摄影师可能只想制作显示器类型的特性文件，在这种情况下，花不到300美元就可以买到一个色度计。色度计有不同的形状和大小，如图4.6所示。如今，这些设备提供了许多有用的功能。德塔颜色（Datacolor）的Spyder5设备提供了一个集成的环境光传感器，可以在环境光水平发生变化时提醒您。X-Rite的设备提供了一种显示控制技术，可以自动化显示器硬件（亮度、对比度和色温）的调整，以加快特性文件制作过程并消除手动调整。色度计可以在反射模式下使用来制作打印机特性文件，一个商业解决方案是德塔颜色的SpyderPRINT系统，如图4.6c所示。
 
 > 需要注意矫正最终是由生成的修正icc文件完成的。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-6.png)
+![第四章 测量仪器 — 图 7]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-6.webp' | relative_url }})
 
 ### 4.5.1 基于滤光片的色度测量法
 
@@ -156,7 +156,7 @@ $$\text{网点面积} = \frac{1-10^{-D_t}}{1-10^{-D_s}} \times 100$$
 
 我们注意到蓝色区域的两个峰值高度明显不同，因此制造商可以通过设置一个单独的、第四个滤光片，专门用于采样这个小的红色凸起，来记录这个额外的峰值。因此，色度计可以有四个滤光片，如图4.7b所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-7.png)
+![第四章 测量仪器 — 图 8]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-7.webp' | relative_url }})
 
 ### 4.5.2 显示器色度计的改进
 
@@ -166,7 +166,7 @@ $$\text{网点面积} = \frac{1-10^{-D_t}}{1-10^{-D_s}} \times 100$$
 
 为了提高基于滤光片的色度计的准确性，可以考虑被测量的特定显示器，如图4.8所示。通过向仪器提供关于显示器光源的信息，用户可以期望获得更高的测量准确性。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-8.png)
+![第四章 测量仪器 — 图 9]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-8.webp' | relative_url }})
 
 有多种方法可以顾及显示器的特性——用户可以从下拉菜单中选择显示器类型，软件可以查询显示器的型号识别标签，或者可以加载一个自定义的测量文件。通过这些过程，借助将测量精细调整至显示器的光源，新一代的色度计得以在更广泛的显示器类型上实现更高的色彩测量准确性。
 
@@ -175,7 +175,7 @@ $$\text{网点面积} = \frac{1-10^{-D_t}}{1-10^{-D_s}} \times 100$$
 
 如今，分光光度计是色彩管理所有方面的首选仪器。在过去，分光光度计是一种不太受欢迎的仪器。分光光度计曾经是缓慢、笨重且昂贵的实验室设备。一台分光光度计会费力地以每1纳米的间隔扫描光谱，这是一个耗时的操作。如今，这些设备小巧、廉价且快速。市场上有多家制造商提供各种型号的分光光度计，形成了一个竞争激烈的格局，如图4.9所示。此图中的每台设备都是可靠、准确、由计算机控制，并将根据现行ISO标准报告测量结果。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-9.png)
+![第四章 测量仪器 — 图 10]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-9.webp' | relative_url }})
 
 分光光度计可以提供一个**点模式**，在该模式下进行单点测量，以检查印刷品是否达到目标值。**扫描设备**能够在短时间内读取大量的色块。**平台式设备**在承印物上方移动，能够适应更厚和/或刚性的介质。这种“点测量-扫描-平台”的区别在某种程度上是一个人为的分类，许多设备，例如X-Rite i1Pro2，可以巧妙地归入所有三类。
 
@@ -185,7 +185,7 @@ $$\text{网点面积} = \frac{1-10^{-D_t}}{1-10^{-D_s}} \times 100$$
 
 > 小声bb，浙大色彩实验室有个几十万分光光度计:)
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-10.png)
+![第四章 测量仪器 — 图 11]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-10.webp' | relative_url }})
 
 ### 4.6.1 分光光度计的特性和功能
 
@@ -195,7 +195,7 @@ $$\text{网点面积} = \frac{1-10^{-D_t}}{1-10^{-D_s}} \times 100$$
 
 在大多数情况下，特性文件制作或其他色彩管理软件会直接与仪器通信，用户只需遵循校准和测量的说明即可。所有仪器也可以通过它们自己的驱动软件和计算机接口进行控制，如图4.11所示。仪器与特性文件制作软件的无缝集成，以及广泛的第三方支持和连接性，推动了分光光度计在色彩管理中的快速增长。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-11.png)
+![第四章 测量仪器 — 图 12]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-11.webp' | relative_url }})
 
 当使用分光光度计计算CIE指标时，有必要指定一些基本参数。必须能够指定CIE标准光源（D50, D65, 光源A等）以及2°或10°标准观察者
 >为什么还需要指定光源呢？不是可以直接测出反射光光谱吗？已经包括了光源，噢我好像明白了这里指定光源应该是为了后续计算LAB值时有参考白点数据吧。
@@ -231,7 +231,7 @@ X-Rite i1Pro2是一款被广泛使用的仪器，在色彩管理领域已家喻�
 
 i1Pro2是一款功能多样的仪器，如4.12图中以下部分所示。(a) 这是一款功能多样的仪器。(b) 该设备有两个光源。(c) i1Pro2可以配合X-Rite ColorTrue软件校准平板设备。(d) 在测量打印色块时，有一个单点模式，用户可以用手引导仪器扫过色块。(e) 仪器可以由一个校准过的标尺引导。(f) 仪器可以用一个扩散片盖子来测量环境光谱特性。(g) i1Pro有一个附件，可以用来为视频投影仪建立特性文件。(h) i1Pro2可以连接到一个名为i1iO的图表读取平台上。(i) i1Pro2被用作数码印刷机的校准仪器，例如EFI Fiery Command WorkStation，它被品牌化为ES-2000。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-12.png)
+![第四章 测量仪器 — 图 13]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-12.webp' | relative_url }})
 
 ### 4.6.3 OBA和紫外荧光
 
@@ -241,7 +241,7 @@ i1Pro2是一款功能多样的仪器，如4.12图中以下部分所示。(a) 这
 
 当仪器之间的紫外线成分不同时，每个测量仪器将在400–500 nm波长范围内产生不同量的发射，这将被计算为同一个样本的不同L\*a\*b\*值。所以两台不同的仪器可能会读取同一个样本并报告不同的值。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-13.png)
+![第四章 测量仪器 — 图 14]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-13.webp' | relative_url }})
 
 ### 4.6.4 M0, M1, M2, M3 测量模式
 
@@ -249,7 +249,7 @@ i1Pro2是一款功能多样的仪器，如4.12图中以下部分所示。(a) 这
 
 一项国际标准——**ISO 13655**——现在定义了四种测量模式——M0, M1, M2和M3，它明确定义了测量仪器中的紫外线成分，如图4.14所示。ISO 13655最初于1996年发布，并于2009年修订。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-14.png)
+![第四章 测量仪器 — 图 15]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-14.webp' | relative_url }})
 
 新版本是ISO 13655:2009- Graphic technology – Spectral measure-
 ment and colorimetric computation for graphic arts images。M0–M3测量模式是在2009年被指定的，但相关的仪器数据和在色彩管理流程中的实施直到很多年后才成为主流。所有制造商都一直在忙于更新或发布符合这个修订标准的新仪器。ISO 13655中定义的仪器模式有：
@@ -285,19 +285,19 @@ ISO 13655允许两种方法来实现M1（D50）照明条件的一致性。这两
 
 市面上有一系列新一代的低成本仪器，它们使用iPhone或安卓设备来报告一个样本的L\*a\*b\*值。一些系统可以包含一张校准卡，并利用智能手机的摄像头，通过一个应用程序来使用手机的处理能力。另一种方法是使用一个小型物理传感器，通过一个智能手机应用程序来提供读数和通信。图4.15中展示了一些商业和OEM系统。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-15.png)
+![第四章 测量仪器 — 图 16]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-15.webp' | relative_url }})
 
 这些低成本设备在美容和化妆品应用、土壤或水的现场测量、屠宰场评估肉色以及油漆店等领域有许多应用。应用程序的界面可以为OEM客户进行个性化定制，并且在内部，可以应用矩阵或其他校正，以微调系统对特定颜色的色彩响应，以适应预期的应用。
 
 一个例子是TECHKON ColorCatcher技术，如图4.16所示。ColorCatcher卡片被放置在样本上方，样本通过一个镂空的窗口显示出来，如图4.16a所示，结果显示在ColorCatcher应用程序上，如图4.16b所示。捕获的图像使用嵌入在ColorCatcher应用程序中的色彩引擎进行处理，以显示RGB和L\*a\*b\*值。此外，还会使用欧洲RAL CLASSIC专色系统确定并显示最接近的专色。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-16.png)
+![第四章 测量仪器 — 图 17]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-16.webp' | relative_url }})
 
 用户可能会问一个问题，这些设备与传统分光光度计相比有多准确？在一个简单的测试中，一个 Macbeth 24色块首先用一台传统的TECHKON SpectroDens分光光度计测量，然后用图4.15中显示的系统再次测量相同的色块。图4.17显示了每个设备与SpectroDens分光光度计之间计算出的ΔE。作为一个健全性检查，CheckChecker的24个色块用同一台TECHKON SpectroDens仪器再次测量，该数据作为图4.17中的第一列显示。在此图中，ΔE越低，即条形图越短，效果越好。
 
 总的来说，用户或许可以轻易接受一个低成本设备和一台传统分光光度计之间高达3.0的平均ΔE变化。这些结果表明，低成本仪器可以提供非常准确的色彩测量。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-17.png)
+![第四章 测量仪器 — 图 18]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-17.webp' | relative_url }})
 
 ### 4.8 仪器间和型号间的一致性
 
@@ -317,7 +317,7 @@ ISO 13655允许两种方法来实现M1（D50）照明条件的一致性。这两
 
 **准确性**指的是测量值与目标或颜色测量仪器的距离，以及如果用实验室参考设备测量，该测量应该具有的“真实”值。我们可以认为M0一代的仪器是可重复的，但不一定准确。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-18.png)
+![第四章 测量仪器 — 图 19]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-18.webp' | relative_url }})
 
 ### 4.10 仪器校准
 
@@ -328,7 +328,7 @@ ISO 13655允许两种方法来实现M1（D50）照明条件的一致性。这两
 分光光度计会有一个白色的校准板。在一些较新的型号中，白色校准板集成在一个滑动盖上，如图4.19所示。校准需要在每次测量的开始和结束时定期进行。
 >即用来校正白点
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-19.png)
+![第四章 测量仪器 — 图 20]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-19.webp' | relative_url }})
 
 大约每一年，仪器应该被送回制造商进行**重新认证**。当一台仪器被制造出来时，它会附有一份证书或校准声明，确认设备按预期工作。图4.20中展示了这样一份证书。在正常使用期间，仪器可能会被碰撞，其组件可能会错位。有必要对仪器进行检查并重新颁发证书，以声明仪器仍处于正常工作状态并能产生可靠的结果。任何具有法律约束力的讨论或诉讼案件，都需要使用经过认证的仪器来进行抗辩。
 
@@ -336,7 +336,7 @@ ISO 13655允许两种方法来实现M1（D50）照明条件的一致性。这两
 
 这些标准板将被用作传递标准，并被带回工厂，在那里它们将被复制以创建一个本地的“主标准板”。然后，这个本地主标准板将被用来校准和控制生产线上正在生产的仪器。因此，任何仪器的数据最终都通过一系列步骤，**可追溯**到一个国家或国际标准。这个标准机构可能是位于马里兰州盖瑟斯堡的美国国家标准与技术研究院（NIST），或位于渥太华的加拿大国家研究委员会，也可能是在伦敦郊外特丁顿的英国国家物理实验室。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/4Measuring Instruments/image-20.png)
+![第四章 测量仪器 — 图 21]({{ '/assets/Understanding Color Management/4Measuring Instruments/image-20.webp' | relative_url }})
 
 
 ## 4.11 总结

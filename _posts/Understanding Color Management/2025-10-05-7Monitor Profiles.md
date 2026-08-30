@@ -53,7 +53,7 @@ category: Understanding Color Management
 
 要为一台显示器制作特性文件，您需要将一个测量仪器放置在您的显示器上，然后等待软件显示一系列色块，如图7.1所示。通过对这些色块的测量，软件可以确定您显示器的伽马、三原色颜色、白点等所有参数。所有这些参数都会被填充并保存在一个ICC特性文件中。本章将解释这些参数的含义以及如何正确设置它们。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-15.png)
+![第七章 显示器特性文件 — 图 1]({{ '/assets/Understanding Color Management/7monitor/image-15.webp' | relative_url }})
 
 随着通过互联网观看图像和商业用途（如在线购物）的增加，网页浏览器准确地表现图像变得日益重要。在这里，我们将探讨色彩爱好者们熟知的Firefox和Safari浏览器是如何做到这一点的。总的来说，我们看到sRGB已经成为面向网页和移动设备的图像和图形的默认色彩空间。
 
@@ -84,7 +84,7 @@ category: Understanding Color Management
 
 要制作一个显示器特性文件，您可以使用一个预装的免费工具，即macOS系统偏好设置中的“显示器校色器助理”，或通过Windows控制面板中的“显示器校准”，如图7.2所示。（在macOS上，“专家模式”是隐藏的，使用键盘快捷键alt/option来访问可开启额外选项的专家模式。）
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-16.png)
+![第七章 显示器特性文件 — 图 2]({{ '/assets/Understanding Color Management/7monitor/image-16.webp' | relative_url }})
 
 macOS的显示器校色器助理和Windows的显示器校准功能都**不支持**测量仪器。相反，它们依赖用户通过滑块和单选按钮进行**视觉调整**，软件再根据这些调整来估算所需的参数，以填充并创建一个有效的ICC特性文件。这种主观的方法很容易出错，因为很难判断滑块的最佳位置，不同的结果可能源于不同的调整。事实上，即便是同一个用户在不同时间也可能做出不同的选择。由于这些工具的准确性较差，它们不大可能被用于专业的工作流程。
 
@@ -98,7 +98,7 @@ macOS的显示器校色器助理和Windows的显示器校准功能都**不支持
 
 基于色度计的特性文件制作非常实惠，例如，X-Rite的ColorMunki Smile或德塔颜色的Spyder5EXPRESS售价约100美元——并且这个价格已经包含了色度计！使用这类解决方案，设计师、数码摄影师和摄像师能够以合理的价格进行专业品质的显示器校准。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-17.png)
+![第七章 显示器特性文件 — 图 3]({{ '/assets/Understanding Color Management/7monitor/image-17.webp' | relative_url }})
 
 ### 7.3.3 集成式软打样解决方案
 
@@ -106,7 +106,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 除了ICS Remote Director，还有一系列来自其他供应商的集成解决方案，例如，包括Dalim DIALOGUE, HELIOS PrintPreview, Kodak MATCHPRINT Virtual, ORIS Color Tuner // Web等。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-18.png)
+![第七章 显示器特性文件 — 图 4]({{ '/assets/Understanding Color Management/7monitor/image-18.webp' | relative_url }})
 
 ### 7.3.4 硬件校准显示器系统
 
@@ -124,7 +124,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 一旦为一个硬件校准的显示器制作了特性文件，色彩管理工作流程的所有其他方面都保持不变。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-19.png)
+![第七章 显示器特性文件 — 图 5]({{ '/assets/Understanding Color Management/7monitor/image-19.webp' | relative_url }})
 
 
 ## 7.4 显示器基础
@@ -135,7 +135,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 亮度和对比度是通过显示器前面板或笔记本电脑键盘上的按键来控制的，如图7.6所示。亮度和对比度设置是校准过程的一部分，因此与亮度和对比度设置相关的信息不会直接存储在显示器特性文件中。特性文件是建立在任何亮度和对比度设置之“上”的，用户有责任在特性文件制作完成后不去更改这些设置。在进行显示器特性文件制作时，首先要做的就是正确设置这些级别，然后再继续实际的特性文件制作过程。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-20.png)
+![第七章 显示器特性文件 — 图 6]({{ '/assets/Understanding Color Management/7monitor/image-20.webp' | relative_url }})
 
 那么，亮度和对比度的正确设置是什么呢？我们先来看亮度控制。它可以设置得太亮或太暗。在这两种情况下，其影响在灰度的暗部末端最为明显，如图7.7a所示。如果显示器太亮，图像最暗的部分将无法显示出真正的纯黑。整体效果是图像会缺乏对比度，看起来平淡和褪色。另一方面，将显示器设置得太暗会导致阴影部分被填满，从而丢失暗部细节。
 
@@ -145,7 +145,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 重要的是要设置好亮度和对比度，使它们能产生一个令人愉悦的连续色调范围，而不会因为阴影部分被堵塞或高光部分被冲掉而丢失细节。有许多渐变类型的测试图像可以帮助进行这些设置。一旦我们知道我们追求的目标，即我们想要的亮度和对比度，找到正确的校正水平就会变得容易一些。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-21.png)
+![第七章 显示器特性文件 — 图 7]({{ '/assets/Understanding Color Management/7monitor/image-21.webp' | relative_url }})
 
 ### 7.4.2 RGB三原色
 
@@ -153,7 +153,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 一个LCD面板由一个背光源穿过微小的液晶和红、绿、蓝滤色片组成，如图7.8b所示。从正常的观看距离看，这些滤色片是看不见的，它们会合并形成一个连续的图像。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-22.png)
+![第七章 显示器特性文件 — 图 8]({{ '/assets/Understanding Color Management/7monitor/image-22.webp' | relative_url }})
 
 三原色（磷光点或LCD滤色片）的“颜色”在不同显示器之间可能会有所不同。假设相同的RGB像素值被发送到两台显示器。即使它们显示的是相同的像素值，我们看到的颜色也会略有不同。如果我们事先知道“什么”是三原色，我们就可以补偿任何差异。例如，我们可以改变发送到一台显示器的指令，这样当观看图像时，颜色就会变得相同。由于所有显示器的三原色都略有不同，通过测量它们并将这些信息存储在一个ICC特性文件中，我们就可以对发送到显示器的像素数据进行调整，从而考虑到显示器之间存在的差异。
 
@@ -161,7 +161,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 红、绿、蓝三原色的色度（颜色值）以XYZ的形式被测量，并存储在一个特性文件的rXYZ, gXYZ, 和 bXYZ标签中。如果您查看这些标签，您可以看到三原色的值，其一个例子如图7.9a所示。在一个加色系统（显示器）中，所有可由显示器实现的颜色都包含在由连接红、绿、蓝三原色坐标形成的色域三角形内，这个三角形在Yxy图上代表了基于真实测量的可实现色域。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-23.png)
+![第七章 显示器特性文件 — 图 9]({{ '/assets/Understanding Color Management/7monitor/image-23.webp' | relative_url }})
 
 ### 7.4.3 白点
 
@@ -175,7 +175,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 电脑显示器的伽马值告诉我们显示器的对比度设置，并因此影响显示在显示器上的图像的外观。如果显示器的伽马太低，图像会显得非常平淡，如图7.10a所示，而高的伽马设置可能会导致从亮到暗的突兀过渡，如图7.10(c)所示。请注意，在以模拟高伽马显示的图像中，阴影细节丢失了，鹅卵石也消失了。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-24.png)
+![第七章 显示器特性文件 — 图 10]({{ '/assets/Understanding Color Management/7monitor/image-24.webp' | relative_url }})
 
 所有显示器出厂时都带有一个介于2.0和3.0之间的固有伽马。查找表可以用来改变这个基本设置。传统上，在macOS上习惯将伽马设置为1.8，而在PC上标准则倾向于2.2。一个较小的伽马值会降低对比度并提亮图像，而一个较大的值会增加对比度和使图像变暗。常用的sRGB特性文件具有2.2的伽马设置。
 
@@ -207,7 +207,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 >原来如此
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-25.png)
+![第七章 显示器特性文件 — 图 11]({{ '/assets/Understanding Color Management/7monitor/image-25.webp' | relative_url }})
 
 新的白点是通过降低绿色和蓝色原色的输出来实现的，这降低了显示器的亮度，并导致了众所周知的、经过D50特性文件制作的显示器典型的暗淡、发黄外观。图7.11b显示，亮度从132 cd/m²下降到了108 cd/m²。在低光照水平下，我们倾向于将白色看作黄色，这进一步加剧了这个问题。通常，色度适应会来拯救我们，几分钟后，当我们适应了场景的新白点时，暗淡发黄的外观就会消失。
 
@@ -248,7 +248,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 要检查一个特性文件，特性文件制作软件会运行一个测试程序，显示并测量颜色。该流程会验证伽马、三原色的色度，以及显示器的整体色度（色彩转换过程）。例如，basICColor Display软件会提供一个ΔE值和一个勾选标记，以指示该特性文件是否准确地描述了显示器的特性，如图7.12a所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-26.png)
+![第七章 显示器特性文件 — 图 12]({{ '/assets/Understanding Color Management/7monitor/image-26.webp' | relative_url }})
 
 一台显示器无法再现其色域之外的颜色。一个特性文件可以准确地代表一个设备，但如果设备的色域太小，它在色彩准确性方面的价值就会受到限制。例如，德塔颜色（Datacolor）的Spyder5Pro验证过程提供了一个易于理解的图表和分析，如图7.12b所示，它显示了一台MacBook Pro笔记本电脑可以达到sRGB色域的96%，这表明该MacBook Pro足以胜任任何以sRGB为目标的图像（例如互联网浏览器和移动电话和平板电脑）的精确评估。
 
@@ -258,7 +258,7 @@ ICS Remote Director是一个软打样解决方案的例子，它将特性文件�
 
 我们在本章中已经看到，一个显示器特性文件是与显卡中的查找表内容结合使用的。尽管显卡查找表的概念在macOS和Windows平台上是共通的，但只有macOS有一个明确定义的系统来存储和使用它。关于显卡伽马标签（vcgt）的使用存在广泛的争论。问题的一部分是，该标签是由Apple ColorSync指定的，甚至在国际色彩联盟（ICC）的规范中都没有被提及。事实上，vcgt标签在理论上，将查找表内容下载到显卡，应该像选择一个显示器特性文件一样简单。当一个特性文件被选中时，vcgt标签的内容应该被下载到显卡的查找表中，如图7.13所示。这种情况在macOS上会发生，当您选择不同的显示器特性文件时，屏幕会闪烁并发生变化。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-27.png)
+![第七章 显示器特性文件 — 图 13]({{ '/assets/Understanding Color Management/7monitor/image-27.webp' | relative_url }})
 
 vcgt标签不是一个必需的标签，所以一些供应商会生成一个vcgt标签，而另一些则不会。如果选择了一个不包含vcgt标签的特性文件，就存在显卡可能包含不相关内容的风险。因此，建议如果一个供应商选择不实现vcgt标签，他们应确保查找表不包含不相关的内容。
 
@@ -274,7 +274,7 @@ vcgt标签在PC平台上并不总是被正确解读。一些特性文件制作�
 
 我们先来考虑包含嵌入式特性文件的网页图像。如果您有一张带有嵌入式特性文件的图像，那么网页浏览器就可以打开该图像并使用该特性文件。转换所需的连接空间是图像的嵌入式特性文件作为源特性文件，而显示器特性文件作为目标特性文件。嵌入在图像中的特性文件可以是v2或v4 ICC特性文件，如图7.14所示。Firefox是一个完全色彩管理的浏览器，其色彩管理策略通过一个配置面板来控制，可以通过在Firefox地址栏中输入“about:config”来显示。Safari也完全支持色彩管理，它会在有可用嵌入式特性文件时加以利用，然后利用显示器特性文件来正确地进行色彩管理，渲染出图像颜色。Safari是“开箱即用”的完全色彩管理。如果您能保证您的图像将仅在Firefox或Safari上被观看，并且每个用户都准确地校准了他们的显示器，那么您除了在您的网页图像中嵌入一个特性文件之外，什么都不需要做。这种乌托邦式的情况很少存在。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-28.png)
+![第七章 显示器特性文件 — 图 14]({{ '/assets/Understanding Color Management/7monitor/image-28.webp' | relative_url }})
 
 并非所有提供给网页的图像都会有嵌入的特性文件。通常，网页图形非常小，以便实现更快的下载速度和更快的页面刷新。考虑到图像本身的大小，一个与之相等或更大尺寸的ICC特性文件是一个沉重的带宽负担。大多数基于网络的图像和图形因此将没有嵌入的特性文件。网页浏览器必须有一个策略来处理那些没有嵌入ICC特性文件和默认行为的图像。根据互联网监管机构——万维网联盟（W3C）的规定——所有未标记的图像和页面元素都应被网页浏览器视为sRGB。**因此，大多数基于网络的图像将假定一个默认的sRGB源特性文件。**
 
@@ -305,7 +305,7 @@ vcgt标签在PC平台上并不总是被正确解读。一些特性文件制作�
 
 遵循最新的PDF/X标准，需要在PDF文件中指定输出意图，这样一来，客户、创作者、印刷服务提供商和印刷厂就都能够看到并批准同一个模拟输出色彩。值得注意的是，“输出预览”正如其名，它仅仅是一个预览，它只是模拟了最终的输出色彩，而没有对图像本身进行任何转换——这是它的一大优点。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-29.png)
+![第七章 显示器特性文件 — 图 15]({{ '/assets/Understanding Color Management/7monitor/image-29.webp' | relative_url }})
 
 ## 7.11 标准光源看样台的标准
 
@@ -329,7 +329,7 @@ ISO 13655是一项通过使用M1测量模式来描述测量仪器中紫外光含
 
 借助最新的技术——符合ISO 13655 (M1) 的测量仪器、符合ISO 3664的灯箱，以及ISO 12646的流程与实践——我们完全有可能在屏幕和印刷品之间实现极好的一致性，从而让能够节省时间和成本的软打样成为现实。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/7monitor/image-30.png)
+![第七章 显示器特性文件 — 图 16]({{ '/assets/Understanding Color Management/7monitor/image-30.webp' | relative_url }})
 
 ## 7.12 总结
 

@@ -31,6 +31,21 @@ Invoke-Check `
   -Paths @("_includes", "_layouts", "blog.html", "about.md", "index.md")
 
 Invoke-Check `
+  -Name "No repository-name-coupled image paths" `
+  -Pattern '\]\(/notes/' `
+  -Paths @("_posts", ".vscode")
+
+Invoke-Check `
+  -Name "No empty or placeholder image alt text" `
+  -Pattern '!\[(?:alt\s*text|all\s*text|image)?\]\(' `
+  -Paths @("_posts")
+
+Invoke-Check `
+  -Name "No fragile bare relative image paths" `
+  -Pattern '!\[[^\]]*\]\((?!https?:|/|\{\{|data:|#)[^)]+\)' `
+  -Paths @("_posts")
+
+Invoke-Check `
   -Name "No inline/block math with raw pipe characters" `
   -Pattern '\$[^\r\n$]*(?<!\\)\|[^\r\n$]*\$|\$\$[^\r\n$]*(?<!\\)\|[^\r\n$]*\$\$' `
   -Paths @("_posts")
@@ -48,7 +63,7 @@ if (Test-Path "_site") {
 
   Invoke-Check `
     -Name "No smart-prime subscripts inside generated inline math" `
-    -Pattern '\$[^\r\n$]*[A-Za-z0-9]’[_A-Za-z0-9]|\$[^\r\n$]*[A-Za-z0-9]''_[^\r\n$]*\$' `
+    -Pattern '\$[^\r\n$]*[A-Za-z0-9]\x2019[_A-Za-z0-9]|\$[^\r\n$]*[A-Za-z0-9]\x27_[^\r\n$]*\$' `
     -Paths @("_site")
 }
 

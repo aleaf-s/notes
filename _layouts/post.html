@@ -63,12 +63,12 @@ layout: default
   var countEl = readingTime.querySelector("[data-post-reading-count]");
   var textEl = readingTime.querySelector("[data-post-reading-text]");
   if (countEl) {
-    countEl.textContent = "(约 " + total + " 字, ";
+    countEl.textContent = "约 " + total + " 字, ";
   }
   if (textEl) {
     // 按每分钟 300 字估算阅读时间
     var minutes = Math.max(1, Math.round(total / 300));
-    textEl.textContent = minutes + " 分钟阅读)";
+    textEl.textContent = minutes + " 分钟阅读，";
   }
 })();
 </script>

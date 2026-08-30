@@ -3,7 +3,11 @@
 .jekyll-cache
 .sass-cache
 _site
-vendor/bundle
+vendor/
 ruby31
 rubyinstaller-devkit-*.exe
 rubyinstaller.log
+tmp/
+.tools/
+__pycache__/
+*.pyc

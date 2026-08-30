@@ -87,7 +87,7 @@ category: Understanding Color Management
 
 任何设备在成为色彩管理工作流程的一部分之前，都必须拥有一个特性文件。我们来思考一下制作一个自定义打印机特性文件的过程，它同样由色彩管理的3C原则构成——校准、特性化和转换。图8.1概述了自定义打印机特性文件的制作流程。要制作打印机特性文件，您需要先**校准**设备，然后通过打印和测量测试图表，并使用特性文件制作软件来**特性化**该设备。最后，通过一个RIP（光栅图像处理器）、色彩工作流程或像Photoshop这样的应用软件，来使用该特性文件**转换**图像数据。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image.png)
+![第八章 印刷机和打印机特性文件制作 — 图 1]({{ '/assets/Understanding Color Management/8Printer/image.webp' | relative_url }})
 
 ## 8.3 喷墨系统的校准
 
@@ -107,7 +107,7 @@ category: Understanding Color Management
 
 请注意，墨量限制设置是校准过程的一部分，不应再被更改。在一个特性文件制作完成后再更改墨量限制，会改变设备的行为，并使打印机特性文件失效。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-1.png)
+![第八章 印刷机和打印机特性文件制作 — 图 2]({{ '/assets/Understanding Color Management/8Printer/image-1.webp' | relative_url }})
 
 ### 8.3.2 油墨挂钩
 
@@ -120,7 +120,7 @@ category: Understanding Color Management
 RIP和特性文件制作软件为喷墨打印机提供了墨量限制的选项，这在进行特性化图表打印之前，就解决了油墨挂钩的问题。
 
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-2.png)
+![第八章 印刷机和打印机特性文件制作 — 图 3]({{ '/assets/Understanding Color Management/8Printer/image-2.webp' | relative_url }})
 
 
 ### 8.3.3 墨水拆分
@@ -135,7 +135,7 @@ RIP和特性文件制作软件为喷墨打印机提供了墨量限制的选项�
 
 从图8.3中可以有趣地注意到，被稀释的淡墨水与普通墨水相比，其色相略有不同；这种色相差异是客观存在的，但无需担忧，因为它会被ICC特性文件的校正作用所完全补偿。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-3.png)
+![第八章 印刷机和打印机特性文件制作 — 图 4]({{ '/assets/Understanding Color Management/8Printer/image-3.webp' | relative_url }})
 
 
 ## 8.4 数码印刷机的校准
@@ -144,7 +144,7 @@ RIP和特性文件制作软件为喷墨打印机提供了墨量限制的选项�
 
 数码印刷机最主要的校准过程被称为**纸张校准**，如图8.5所示。纸张校准通常涉及打印和测量CMYK颜色渐变条。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-4.png)
+![第八章 印刷机和打印机特性文件制作 — 图 5]({{ '/assets/Understanding Color Management/8Printer/image-4.webp' | relative_url }})
 
 在多种情况下，可能需要对数码印刷机进行校准，例如环境发生变化后、更换零件等机械变动后，或者最常见的，为了适应不同纸张类型带来的影响。在数码印刷中，校准也被用作一种流程控制手段，以调整印刷机的响应并使其恢复到一个已知的稳定状态。
 
@@ -154,7 +154,7 @@ RIP和特性文件制作软件为喷墨打印机提供了墨量限制的选项�
 
 校准文件为选定的输出特性文件提供了基础。事实上，如果不参照校准文件，是无法进行打印的，正如在EFI Command WorkStation DFE界面中所展示的，如图8.6所示。请注意，每一个图像路径在送往印刷机之前，都必须经过校准阶段。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-5.png)
+![第八章 印刷机和打印机特性文件制作 — 图 6]({{ '/assets/Understanding Color Management/8Printer/image-5.webp' | relative_url }})
 
 ## 8.5 胶印的校准
 
@@ -172,7 +172,7 @@ G7校准流程可以应用于胶印以及其他CMYK印刷流程。G7基于**灰�
 
 长久以来，人们都知道要用胶印油墨创建一个中性色，需要使用不等量的CMY。对于一个能产生中性中间调灰色的CMY混合，有一个“50, 40, 40”的经验法则。每一种印刷油墨组都需要一个不同的青色:品红:黄色的比例来创建一个中性灰。确定您特定印刷系统的这些相对比例，就是G7的基本原理。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-6.png)
+![第八章 印刷机和打印机特性文件制作 — 图 7]({{ '/assets/Understanding Color Management/8Printer/image-6.webp' | relative_url }})
 
 G7是基于在CMY构成的黑色和仅用K构成的黑色之间建立一种关系，这种关系基于所用的纸张以及该印刷流程能达到的最高密度。请看图8.7，它展示了G7校准流程的步骤。
 
@@ -196,7 +196,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 大多数情况下，当使用不同的打印流程时，为了在简单色调之外的所有颜色方面都获得完全匹配，我们必须考虑基于ICC特性文件的色彩管理。**G7是一个校准程序**，与其他校准程序一样，它通常之后会跟随着ICC特性文件的应用，这遵循了色彩管理的3C原则——校准、特性化和转换。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-7.png)
+![第八章 印刷机和打印机特性文件制作 — 图 8]({{ '/assets/Understanding Color Management/8Printer/image-7.webp' | relative_url }})
 
 
 ## 8.6 打印机测试图表
@@ -211,7 +211,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 ### 8.6.1 常用的打印机测试图表
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-8.png)
+![第八章 印刷机和打印机特性文件制作 — 图 9]({{ '/assets/Understanding Color Management/8Printer/image-8.webp' | relative_url }})
 
 图8.9展示了几种用于不同特性文件制作流程的图表。其中，IT8.7/1和IT8.7/2是用于扫描仪的，我们在此略过，主要关注用于打印机的图表。
 
@@ -231,7 +231,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 ### 8.6.2 可视化与随机布局
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-9.png)
+![第八章 印刷机和打印机特性文件制作 — 图 10]({{ '/assets/Understanding Color Management/8Printer/image-9.webp' | relative_url }})
 
 打印机图表通常设计有“可视化”和“随机”两种布局，如图8.10所示。
 
@@ -278,7 +278,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 要判断您当前使用的是RGB还是CMYK工作流程，有一个简单的测试方法（图8.12）。如果打印出的上下两行渐变看起来相似，您使用的就是RGB流程；如果下方渐变显得浑浊，那么您的打印流程就假定输入的是CMYK数据。您需要根据您的工作流程、硬件和软件来选择合适的方法，因为不同模式会产生不同的结果。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-10.png)
+![第八章 印刷机和打印机特性文件制作 — 图 11]({{ '/assets/Understanding Color Management/8Printer/image-10.webp' | relative_url }})
 
 ### 8.7.2 以“无色彩管理”方式打印
 
@@ -288,11 +288,11 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 要做到这一点，可以使用一些专用工具。例如，macOS自带的ColorSync实用工具，允许以“作为颜色目标打印”的选项来关闭色彩管理（图8.13a）。如果通过RGB打印机驱动打印RGB图表，则需要在相应的对话框中关闭色彩管理（图8.13b）。Adobe Color Printer Utility也允许在Windows或macOS上以无色彩管理的方式打印测试目标。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-11.png)
+![第八章 印刷机和打印机特性文件制作 — 图 12]({{ '/assets/Understanding Color Management/8Printer/image-11.webp' | relative_url }})
 
 有一个简单的方法可以判断打印时是否应用了色彩管理：用一个放大镜仔细观察任意一个单色色块。一个“干净”的打印色块，应该只包含数字文件中指定的那些着色剂，而不含其他颜色的墨水（图8.14a）。如果在打印过程中我们看到了微量的其他颜色墨水被添加进来，这通常意味着打印时应用了色彩管理（图8.14b）。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-12.png)
+![第八章 印刷机和打印机特性文件制作 — 图 13]({{ '/assets/Understanding Color Management/8Printer/image-12.webp' | relative_url }})
 
 ### 8.7.3 针对不同测量仪器的布局
 
@@ -306,7 +306,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 考虑打印图表的物理尺寸也很重要。在打印过程中，不应无意中改变图表的尺寸以适应页面或与其他图像放在一张纸上。每台仪器都有一个最小的色块尺寸要求，如果图像尺寸过小，可能会导致读取图表时出现问题。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-13.png)
+![第八章 印刷机和打印机特性文件制作 — 图 14]({{ '/assets/Understanding Color Management/8Printer/image-13.webp' | relative_url }})
 
 ### 8.7.4 白色背衬
 
@@ -318,7 +318,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 ### 8.7.5 检查测量文件
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-14.png)
+![第八章 印刷机和打印机特性文件制作 — 图 15]({{ '/assets/Understanding Color Management/8Printer/image-14.webp' | relative_url }})
 
 在测试图表被打印和测量之后，可以将测量数据保存为一个文本文件，如图8.16所示。该测量文件是一个ASCII文件，可以用任何文本编辑器打开。我们看到，文件头应指明测量条件，如今推荐的测量模式是M1，它代表一个包含UV的、D50的测量条件。文件头还显示了测量的色块数量为1617个，这表明数据来自一张IT8.7/4图表。
 
@@ -332,7 +332,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 ### 8.7.6 平均化测量文件
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-15.png)
+![第八章 印刷机和打印机特性文件制作 — 图 16]({{ '/assets/Understanding Color Management/8Printer/image-15.webp' | relative_url }})
 
 印刷流程有许多活动部件，因此在一次印刷过程中常常会表现出变异性，例如第一张和最后一张印张之间的差异，以及在一张印张内从左到右和从上到下的变化。在所有印刷系统中都可能出现变化，包括静电印刷、大幅面喷墨，以及传统的胶印、柔印和凹印。
 
@@ -346,7 +346,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 ### 8.8.1 黑版生成
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-16.png)
+![第八章 印刷机和打印机特性文件制作 — 图 17]({{ '/assets/Understanding Color Management/8Printer/image-16.png' | relative_url }})
 
 输出特性文件生成的一个主要部分，涉及到一个关于黑版生成的设置，它包含了被称为底色去除（Under Color Removal, UCR）和灰色成分替代（Gray Component Replacement, GCR）的工艺，以及节省油墨的目的。所有供应商都为黑版生成提供了一个默认设置，所以对于一般要求，可以直接使用默认值。
 
@@ -356,7 +356,7 @@ G7曲线是一种特定的、被选定的色调曲线形状，它在一个名为
 
 GCR/UCR流程就是用来减少三原色油墨（青、品红、黄）的用量，并用等量的黑色油墨来替代它们。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-17.png)
+![第八章 印刷机和打印机特性文件制作 — 图 18]({{ '/assets/Understanding Color Management/8Printer/image-17.webp' | relative_url }})
 
 使用黑色成分的优势如图8.19所示，它将一个三色图像与一个四色图像进行了对比。请注意，四色图像阴影部分的黑色更清爽、更干净，而三色图像的黑色则显得暗淡、肮脏。同时也要注意，四色图像的整体图像质量和色彩再现效果看起来更好。
 
@@ -370,7 +370,7 @@ GCR/UCR流程就是用来减少三原色油墨（青、品红、黄）的用量�
 
 ### 8.8.2 特性文件质量
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-18.png)
+![第八章 印刷机和打印机特性文件制作 — 图 19]({{ '/assets/Understanding Color Management/8Printer/image-18.webp' | relative_url }})
 
 当一个打印机特性文件被制作时，用户需要选择一个质量设置，例如，小、中、大，如图8.20所示。这个设置指的是L\*a\*b\*-到-CMYK和CMYK-到-L\*a\*b\*查找表中的**条目数量**。
 
@@ -382,7 +382,7 @@ GCR/UCR流程就是用来减少三原色油墨（青、品红、黄）的用量�
 
 如果文件大小不是问题，那么建议使用最大数量的立方体节点。如果文件大小是一个问题，那么可以减小A到B（仅用于打样）查找表的尺寸，但保留用于处理最终图像数据的B到A查找表的完整尺寸。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-19.png)
+![第八章 印刷机和打印机特性文件制作 — 图 20]({{ '/assets/Understanding Color Management/8Printer/image-19.png' | relative_url }})
 
 ## 8.9 检查打印机特性文件
 
@@ -392,19 +392,19 @@ GCR/UCR流程就是用来减少三原色油墨（青、品红、黄）的用量�
 
 在生成特性文件之后，检查其查找表的三维渲染图是很有用的。请确保其三维色域模型的表面没有**扭结或凹痕**，如图8.22所示。如果色域形状在某些区域不平滑，这可能是在图表测量过程中出现了错误。任何奇怪的畸变或不连续都应引起警惕。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-20.png)
+![第八章 印刷机和打印机特性文件制作 — 图 21]({{ '/assets/Understanding Color Management/8Printer/image-20.webp' | relative_url }})
 
 检查色域模型的顶部和底部。模型的底部（暗部）应该尽可能地低，接近L\*=0。如果三维模型悬浮在远高于L\*=0的位置，这表明系统没有测量到一个非常深的黑色，这不仅会影响黑色，还可能对打印图像中的其他颜色产生负面影响。
 
 使用像Chromix ColorThink Pro这样的工具，可以将测量文件与ICC特性文件中的色域数据进行比较，如图8.23所示。特性文件是直接从测量数据生成的，所以这两者应该高度吻合。这两项的重叠表明特性文件制作过程是成功的。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-21.png)
+![第八章 印刷机和打印机特性文件制作 — 图 22]({{ '/assets/Understanding Color Management/8Printer/image-21.webp' | relative_url }})
 
 也许最根本、最全面的测试，是使用一个**控制条**来评估**色差（ΔE）**。在实际操作中，流程的许多环节都可能出错：比如同事在您不知情的情况下更换了介质，测试图表在测量前没有干透，或者在打印测试图表和处理最终图像之间软件设置被更改了。
 
 打印机特性文件的性能可以通过使用一个控制条来检查，这能确认色彩管理系统的所有部分是否都按预期工作。CGS ORIS Certified // Web就是用于此目的的一个简单而优雅的产品，如图8.24所示。通过测量控制条的测试色块，可以确认您是否在容差范围内达到了预期的目标。用户可以计算出一个ΔE检查值，这是一个涵盖整个色彩管理过程（包括校准、特性化和转换）所有方面的综合性指标。ΔE是一个有意义的度量标准，可以被随时引用并被广泛理解。如果您对54个精心挑选的颜色，得到的平均ΔE值约为2，那么您就拥有一个非常稳健、准确的色彩管理系统。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-22.png)
+![第八章 印刷机和打印机特性文件制作 — 图 23]({{ '/assets/Understanding Color Management/8Printer/image-22.webp' | relative_url }})
 
 ### 8.9.2 定性检查
 
@@ -422,7 +422,7 @@ GCR/UCR流程就是用来减少三原色油墨（青、品红、黄）的用量�
 
 如果结果看起来不错，就可以继续使用这个打印机特性文件。如果不行，则应考虑重新制作。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-23.png)
+![第八章 印刷机和打印机特性文件制作 — 图 24]({{ '/assets/Understanding Color Management/8Printer/image-23.webp' | relative_url }})
 
 
 ## 8.10 参考印刷条件
@@ -445,7 +445,7 @@ GCR/UCR流程就是用来减少三原色油墨（青、品红、黄）的用量�
 
 值得注意的是，这些特性化数据文件本身并不是ICC特性文件，但可以用来制作ICC特性文件。特性文件制作程序可以基于同一份数据，创建出不同的感知渲染意图、不同的黑版生成策略和不同大小的查找表。这意味着，**对于同一个参考印刷条件，可能会存在许多个不同的ICC特性文件**。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-24.png)
+![第八章 印刷机和打印机特性文件制作 — 图 25]({{ '/assets/Understanding Color Management/8Printer/image-24.webp' | relative_url }})
 
 ### 8.10.2 美国和欧洲的参考印刷条件
 
@@ -486,7 +486,7 @@ WAN-IFRA（世界报纸和新闻出版商协会）发布了以下用于新闻纸
 
 目前已经有许多努力来将上述所有数据集更新到M1测量模式，并且特性化数据也在定期更新，以更好地代表当前可用的胶印纸张。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-25.png)
+![第八章 印刷机和打印机特性文件制作 — 图 26]({{ '/assets/Understanding Color Management/8Printer/image-25.webp' | relative_url }})
 
 ### 8.10.3 在印前和印刷中使用参考印刷条件
 
@@ -494,11 +494,11 @@ WAN-IFRA（世界报纸和新闻出版商协会）发布了以下用于新闻纸
 
 在Photoshop, InDesign, 或 Illustrator中，创意专业人士可以使用GRACoL特性文件来对设计或图像进行打样。用户可以在GRACoL色彩空间中预览图像，如图8.30所示。用户可以应用色域警告来查看是否有颜色超出了色域，并可以根据预览图像进行色彩编辑。所有关于预期印刷结果的方方面面，都可以在软件中进行全面的预测和可视化。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-26.png)
+![第八章 印刷机和打印机特性文件制作 — 图 27]({{ '/assets/Understanding Color Management/8Printer/image-26.webp' | relative_url }})
 
 用户可能还希望制作一张图像的硬拷贝打样稿。打样稿的目的是模拟最终印刷品的视觉特性。在一个打样工作流程中，创建一张能反映GRACoL预期印刷结果的硬拷贝喷墨打样是很容易的。在这个流程中，RGB图像会经过特性文件处理，以在一张打样稿上模拟出GRACoL的响应，如图8.31所示。这张硬拷贝打样稿展示了当图像最终在一台“按照GRACoL标准”印刷的印刷机上打印时，将会呈现的外观。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-27.png)
+![第八章 印刷机和打印机特性文件制作 — 图 28]({{ '/assets/Understanding Color Management/8Printer/image-27.webp' | relative_url }})
 
 
 我们再考虑一下在数码印刷机上打印的情况。也许客户需要一个短版活，但同时又要求有胶印的“外观和感觉”。在数码印刷机上，要创建出GRACoL胶印会产生的颜色是很容易的。要做到这一点，GRACoL ICC特性文件被选为**源特性文件**，如图8.32所示。为了完成这个色彩管理的配对，GRACoL特性文件再与一个**目标特性文件**链接起来，在本例中是Xerox DocuColor 8000的设备特性文件。
@@ -507,7 +507,7 @@ WAN-IFRA（世界报纸和新闻出版商协会）发布了以下用于新闻纸
 
 一个基于商定参考印刷条件的工作流程是值得推荐的工作方式，因为它是可实现的，它为所有活件创造了一个标准化的外观和感觉，它易于验证，并且色彩预期很容易传达给客户和印刷品买家。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-28.png)
+![第八章 印刷机和打印机特性文件制作 — 图 29]({{ '/assets/Understanding Color Management/8Printer/image-28.webp' | relative_url }})
 
 ### 8.10.4 “按数字印刷”
 
@@ -517,7 +517,7 @@ WAN-IFRA（世界报纸和新闻出版商协会）发布了以下用于新闻纸
 
 让我们用一个例子来说明实际的“按数字印刷”验证。我们来看一下IDEAlliance控制条，如图8.33所示。如果这个控制条的CMYK值在一个GRACoL印刷或打样流程中被再现，那么每个色块的印刷和测量值都应该与GRACoL特性化数据集相符。Photoshop允许我们使用一个GRACoL特性文件来确认这个过程。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-29.png)
+![第八章 印刷机和打印机特性文件制作 — 图 30]({{ '/assets/Understanding Color Management/8Printer/image-29.webp' | relative_url }})
 
 如果在Photoshop中打开一个CMYK控制条，并将GRACoL特性文件分配给它，Photoshop的信息面板会告诉我们，CMYK值为30, 0, 0, 0的青色色块，其L\*a\*b\*值为83, -10, -18。而查阅GRACoL特性化数据文件，我们看到预期的L\*a\*b\*值为82.64, -9.99, -17.85。我们看到两者之间有极好的一致性。（Photoshop的信息面板不显示小数值，其L\*a\*b\*值是四舍五入的，并且在Photoshop的颜色设置中使用绝对比色渲染时）。虽然这个例子只考虑了一个单一的青色色块，但通常一个控制条上的所有其他色块，甚至整个IT8.7/4图表，都可以用类似的方式进行验证。
 
@@ -527,7 +527,7 @@ WAN-IFRA（世界报纸和新闻出版商协会）发布了以下用于新闻纸
 
 ## 8.11 渲染意图
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-30.png)
+![第八章 印刷机和打印机特性文件制作 — 图 31]({{ '/assets/Understanding Color Management/8Printer/image-30.webp' | relative_url }})
 
 在打印机特性文件中，渲染意图是一个重要的概念。它与ICC工作流程的所有环节都有关，但在**打印**环节尤为重要，因为这通常是图像从一个大色域设备（如数码相机）转换到一个小色域设备（如印刷机）的时刻。
 
@@ -546,7 +546,7 @@ ICC支持四种渲染意图：**感知（perceptual）**、**相对比色（rela
 
 有些图像路径会使用不止一种渲染意图。例如，在软打样和印刷打样中，我们可能希望使用感知渲染将图像转换到打印机空间（以模拟最终印刷品悦目的效果），但为了在屏幕上观看这个模拟结果，图像又会通过相对或绝对比色意图被转换回特性文件连接空间（以求精确地在屏幕上再现模拟的印刷品颜色）。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-31.png)
+![第八章 印刷机和打印机特性文件制作 — 图 32]({{ '/assets/Understanding Color Management/8Printer/image-31.webp' | relative_url }})
 
 ### 8.11.1 感知渲染意图
 
@@ -580,7 +580,7 @@ ICC规范并没有为感知映射定义精确的机制，这给予了每个软�
 
 总结来说，在“相对比色”中，原稿和复制品都是**相对于它们各自承印物的白点**来显示的。当我们在尝试获得一个接近的匹配（但非严格的并排比较），且源色域和目标色域大小相似，承印物颜色又不太深时，此意图是许多摄影类图像的理想选择。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-32.png)
+![第八章 印刷机和打印机特性文件制作 — 图 33]({{ '/assets/Understanding Color Management/8Printer/image-32.webp' | relative_url }})
 
 ### 8.11.3 绝对比色渲染意图
 
@@ -598,7 +598,7 @@ ICC规范并没有为感知映射定义精确的机制，这给予了每个软�
 
 “绝对”和“相对”比色意图并不仅限于打印机特性文件，它们也同样被用于包括显示器特性文件在内的其他类型文件中。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-33.png)
+![第八章 印刷机和打印机特性文件制作 — 图 34]({{ '/assets/Understanding Color Management/8Printer/image-33.webp' | relative_url }})
 
 ### 8.11.4 饱和度渲染意图
 
@@ -613,7 +613,7 @@ ICC规范并没有为感知映射定义精确的机制，这给予了每个软�
 
 ### 8.12.1 ICC设备链接
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-34.png)
+![第八章 印刷机和打印机特性文件制作 — 图 35]({{ '/assets/Understanding Color Management/8Printer/image-34.webp' | relative_url }})
 
 设备链接特性文件是一种经ICC批准的特性文件类型，可用于固定的、设备到设备的色彩转换。一个设备链接ICC特性文件允许进行例如从RGB到CMYK或从CMYK到CMYK的色彩转换。设备链接特性文件是通过将一个源特性文件和一个目标特性文件串联成一个单一的设备链接特性文件而制成的，如图8.38所示。
 
@@ -631,7 +631,7 @@ ICC规范并没有为感知映射定义精确的机制，这给予了每个软�
 
 ### 8.12.2 专有的设备链接
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-35.png)
+![第八章 印刷机和打印机特性文件制作 — 图 36]({{ '/assets/Understanding Color Management/8Printer/image-35.webp' | relative_url }})
 
 GMG ColorProof是一个成熟的色彩打样解决方案，用于创建高精度的合同色彩打样，如图8.39所示。ColorProof是一个非ICC的、专有的解决方案，它融合了使用设备链接方法的色彩管理精髓与概念。
 
@@ -650,7 +650,7 @@ ColorProof使用一个查找表来链接两个特定的印刷流程。来自原�
 
 在打印大幅面样张时的一个考虑因素是整个样张上的油墨应用。在整个样张的宽度上保持一致和均匀的油墨应用是很重要的。可以使用控制元件，例如重复的CMYK色块，这些色块可以使用扫描分光光度计来测量，以评估油墨的均匀性，如图8.40所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-37.png)
+![第八章 印刷机和打印机特性文件制作 — 图 37]({{ '/assets/Understanding Color Management/8Printer/image-37.webp' | relative_url }})
 
 要监控数码印刷机上的打印质量，用户可以打印一个质量控制文件，其一个例子如图8.41所示。这个例子包括控制色块、CMYK渐变、灰平衡色块以及带有肤色的图像，这些都为比较提供了一个良好的基础。用户应该定期并在任何重大升级或设备变更后打印此文件。
 
@@ -660,9 +660,9 @@ ColorProof使用一个查找表来链接两个特定的印刷流程。来自原�
 
 流程监控在显示器和数码相机中不那么关键，因为这些成像系统的活动部件较少，操作条件也相对稳定。而在印刷色彩管理中，流程控制对于色彩管理的成功是强制性的。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-38.png)
+![第八章 印刷机和打印机特性文件制作 — 图 38]({{ '/assets/Understanding Color Management/8Printer/image-38.webp' | relative_url }})
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/8Printer/image-39.png)
+![第八章 印刷机和打印机特性文件制作 — 图 39]({{ '/assets/Understanding Color Management/8Printer/image-39.webp' | relative_url }})
 
 ## 8.14 总结
 

@@ -45,7 +45,7 @@ category: Understanding Color Management
 
 为了理解设备的特性，可以考虑一个制作微波炉爆米花的类比，如图1.1所示。通过反复试验，我们或许能确定家里的微波炉需要**恰好两分钟**才能爆开所有玉米粒而又不烧糊。然而，对于一台功率更高的办公室微波炉来说，两分钟就太长了，我们确定烹饪时间需要调整并减少到**一分半钟**。在一个学生公寓里，用一台功率很弱的迷你微波炉，我们发现需要**三分钟**才能做出完美的一袋零食。在所有这些情况下，我们都能得到同样的结果——一袋完美爆开的爆米花——但我们必须调整烹饪时间来适应每个微波炉的功率和设置，换句话说，就是要考虑**每个设备的特性**。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image.png)
+![第一章 引言 — 图 1]({{ '/assets/Understanding Color Management/Intro/image.webp' | relative_url }})
 
 在数字成像中，我们可以想象一张有黄柠檬的图片，如图1.1所示。我们希望在不同的设备上重现这个黄色。每台打印机都以不同的方式打印，使用不同的油墨或墨粉，并且每台设备可能使用不同的介质。为了在不同设备上创建这个黄色，我们必须考虑每个设备的特性。
 
@@ -67,13 +67,13 @@ category: Understanding Color Management
 
 图1.2展示了一个闭环系统的例子。图像总是从一台照片扫描仪（也许是滚筒扫描仪）获取，总是在同一台监视器上显示，并且图像的目标是用于单一类型的印刷工艺，例如，由诸如ColorArt或Chromalin之类的打样系统所模拟的胶印印刷条件。在这种紧密控制的情况下，获得我们想要的颜色是相对容易的。然而，必须满足两个重要条件：一个固定的工作流程和技术娴熟的人员。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-1.png)
+![第一章 引言 — 图 2]({{ '/assets/Understanding Color Management/Intro/image-1.webp' | relative_url }})
 
 在闭环系统中，有必要拥有一位训练有素的扫描操作员。通过数小时的使用，操作员会逐渐了解特定扫描仪的特性以及所需的色调曲线校正。图像会根据已知的印刷条件，被直接采集为CMYK（青色、品红色、黄色和黑色）格式。
 
 为了获得最佳效果，操作员会生成一套必要的操作来应用于扫描的图像。这套校正通常取决于图像是低调还是高调（原文是low and high key，我不太了解这个专业术语），是否有主要的肤色，客户是谁（基于他们的颜色偏好），以及工作的具体要求。颜色校正是基于操作员的经验进行的，操作员会使用吸管工具显示的CMYK值来进行调整，如图1.3所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-2.png)
+![第一章 引言 — 图 3]({{ '/assets/Understanding Color Management/Intro/image-2.webp' | relative_url }})
 
 除了技术娴熟的操作员，闭环系统的另一个要求是一个固定的工作流程。也就是说，有必要知道图像来自哪里，它将如何被观看，以及它将如何被印刷。设备之间的关系是通过一个漫长、迭代的过程学习得来的，更换设备并不容易。如果图像来自不同的扫描仪系统，或者要发送到不同的印刷配置，那么整个工作就必须重做。
 
@@ -106,11 +106,11 @@ category: Understanding Color Management
 
 如果每个城市都必须与其他每个城市直接相连，那将需要庞大数量的航班。轴辐式系统的一大优势是，它极大地减少了覆盖所有目的地所需的航班数量。该系统的另一个优势是，向航线中添加一个新城市非常简单。所需要的只是从城市C飞往中心枢纽的单程航班，瞬间，城市C就与城市A、B以及航空公司网络中的其余部分连接起来了。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-3.png)
+![第一章 引言 — 图 4]({{ '/assets/Understanding Color Management/Intro/image-3.webp' | relative_url }})
 
 这个类比如何与色彩管理相关联呢？现代色彩管理使用一个中心枢纽系统在设备之间传递颜色信息，如图1.5所示。这个中心枢纽的官方名称是**特性文件连接空间（Profile Connection Space）**。一个称为**色彩特性文件（color profile）**的文件构成了系统的“辐条”。色彩管理系统使用色彩特性文件将设备连接到中心连接空间，进行色彩信息的输入和输出。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-4.png)
+![第一章 引言 — 图 5]({{ '/assets/Understanding Color Management/Intro/image-4.webp' | relative_url }})
 
 如果您是一位旅行的乘客，想要进入机场航站楼，您必须有一张登机牌。同样，一张图像要进入色彩管理系统，也必须有一个色彩特性文件。因此，我们需要用于扫描图像的扫描仪特性文件，用于相机图像的数码相机特性文件，用于在显示器上显示图像的显示器特性文件，以及用于打印图像的打印机特性文件。设备色彩行为被封装在一个特性文件中，因此当一张图像完成其进出中心枢纽的旅程时，图像中的像素数据会通过特性文件被自动调整，以顾及每个设备的特性行为。
 
@@ -118,7 +118,7 @@ category: Understanding Color Management
 
 **只有当每一张图像都有一个特性文件时，色彩管理才能工作。** 只需在Adobe Photoshop中打开一张图片，就有可能看到该图片有关联的特性文件，在本例中，该特性文件的名称是“Adobe RGB (1998)”，如图1.6a所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-5.png)
+![第一章 引言 — 图 6]({{ '/assets/Understanding Color Management/Intro/image-5.webp' | relative_url }})
 
 色彩管理流程的另一个特点是**源和目标特性文件**。在航空公司的类比中，乘客飞入和飞出中心枢纽；同样，在色彩管理中，我们需要知道图像来自哪里（源）以及它要去哪里（目标）。色彩管理操作要求用户指定一个源和一个目标特性文件。源和目标特性文件在Photoshop的一个对话框中有清晰的展示，如图1.6b所示。该图显示了一个常用的RGB到CMYK的“旅行计划”，其中图像从一个名为“Adobe RGB (1998)”的源空间开始，并前往其由一个名为“GRACol_2006_Coated1v2”的特性文件所指示的目标。
 
@@ -149,7 +149,7 @@ category: Understanding Color Management
 
 > 注意这里从图像到显示器过程中之所以加一个打印机的特征文件是因为，我们从图像到打印机再现的时候这个过程可能发生色域裁剪，导致一些色彩发生变化。 如果不懂裁剪就接着往后看吧
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-6.png)
+![第一章 引言 — 图 7]({{ '/assets/Understanding Color Management/Intro/image-6.webp' | relative_url }})
 
 一个能节省大量时间（和金钱）的方法是**印刷打样 (press proof)**。这个过程在一台普通的桌面打样机上模拟印刷机的结果，这样您就可以在打印数千份之前看到图像的样子。在印刷打样场景中，图像通过输入特性文件被带入中心空间。然后，图像被处理到印刷机特性文件，再从印刷机（空间）被带回，并最终发送到一台本地的喷墨打样机。这台喷墨设备提供了印刷产品的再现品，因此可以作为一个预览，用于检测打印作业中的任何问题。由于喷墨打样是结合印刷机的特性制作的，它可以精确地代表印刷机的能力，并可以作为客户签样的硬拷贝证明，让人确信印刷机能够实现所显示的颜色。
 
@@ -171,7 +171,7 @@ category: Understanding Color Management
 
 人们普遍认为，ICC的诞生始于1992年在慕尼黑举行的一次FOGRA（德国平面技术研究协会）会议。在常规议程之后，FOGRA的组织者邀请客人们在一个小会议室里继续讨论。在这次会议上，多家供应商公开谈论了ColorSync以及他们对于一个统一色彩管理框架的兴趣。秘密的幕布被揭开，苹果ColorSync联盟成立了。该联盟于1993年在加利福尼亚州帕洛阿尔托的太阳微系统公司（Sun Microsystems）举行了第一次正式会议，如图1.8a所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-7.png)
+![第一章 引言 — 图 8]({{ '/assets/Understanding Color Management/Intro/image-7.webp' | relative_url }})
 
 “苹果ColorSync”这个名字很快就从标题中被去掉了，因为所有人都同意该联盟应该是真正平台独立的。一个名为国际色彩联盟（ICC）的完全独立的组织应运而生。行业从能够使用ColorSync模型作为现代色彩管理系统的基础和框架中获益匪浅。业界也应感谢苹果电脑公司高瞻远瞩地向社区提供其技术。
 
@@ -195,7 +195,7 @@ ICC已经创建了一个彻底改变并极大地造福了色彩管理的通用�
 
 在日常的色彩管理中，涉及许多不同的公司和产品，重要的是，由一个制造商生产的配置文件可以被另一家公司的设备使用，并通过第三方应用程序软件在Windows或Mac操作系统上连接起来。所有的配置文件都是根据ICC规范制作的，这意味着谁制作了配置文件并不重要；配置文件适用于所有设备、所有软件和所有操作系统。这个格式是如此开放，以至于如果你是Mac用户，双击任何配置文件，它就会打开，如图1.9a所示。在Windows上，一个ICC配置文件可以被打开，其内容可以通过一个免费的实用程序查看，如图1.9b所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-8.png)
+![第一章 引言 — 图 9]({{ '/assets/Understanding Color Management/Intro/image-8.webp' | relative_url }})
 
 一个ICC特性文件是一个计算机文件，其大小可以从一个简单的4kB显示器特性文件到一个8MB的打印机特性文件不等。特性文件可以嵌入到图像中，也可以作为独立文件使用。在特性文件的构造方面，所有设备都被认为是平等的——即ICC不区分一个100美元的桌面喷墨打印机的特性文件和一个100万美元的胶印机的特性文件。
 
@@ -212,7 +212,7 @@ ICC色彩管理今天就在这里，并且会一直存在，它不会很快消�
 
 在色彩管理中，我们会遇到以RGB和CMY（或更常见的CMYK）来表示的色彩规范。设备使用这两种基本色彩集合中的一种来运作，如图1.10所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-9.png)
+![第一章 引言 — 图 10]({{ '/assets/Understanding Color Management/Intro/image-9.webp' | relative_url }})
 
 有些设备使用RGB（即红、绿、蓝）色彩集合来创建颜色。RGB是**加色或原色**色彩集合。基于RGB的技术有平板显示器、数码相机和平板设备。青、品红和黄（CMY）是另一种基本的色彩集合。CMY被称为**减色或次色**色彩集合。CMY设备包括所有打印机和印刷机。在这两种系统中，三种着色剂各自控制光谱的三分之一，因此通过使用不同量的RGB或CMY，我们能够创造出宽广范围的颜色。
 
@@ -228,13 +228,13 @@ ICC色彩管理今天就在这里，并且会一直存在，它不会很快消�
 
 可以用这两种色彩空间中的任意一种来指定颜色，一个颜色可以通过描述不同量的RGB或CMYK来指定。例如，一个颜色描述可以是，如表1.1所示，在一个0-255的标度上，R = 10, G = 200, B = 32，这是一个绿色；以及在一个0-100%的标度上，C = 23%, M = 6%, Y = 83%, K = 4%，这是一个黄色。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-10.png)
+![第一章 引言 — 图 11]({{ '/assets/Understanding Color Management/Intro/image-10.png' | relative_url }})
 
 在RGB的情况下，像素指令可以被发送到一个显示器，显示器执行这些指令，从而显示出一个颜色，如图1.11a所示。但是，如果同样的指令被发送到另一个不同的显示器，由于显示器的差异，可能会产生一个略有不同的颜色。
 
 在CMYK的情况下，这些指令可能是胶印过程中的上墨量，印刷版会将，例如，所要求的油墨量转移到纸张上，如图1.11b所示。但如果同样的CMYK值被发送到另一个不同的印刷工艺，系统可能很忠实地遵循指令沉积了完全正确的油墨量，但由于使用了不同的纸张、油墨和印刷工艺，却得到了一个不同的颜色。***RGB和CMYK仅仅是给设备的指令，并不提供一个可靠或精确的色彩规范。***
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-11.png)
+![第一章 引言 — 图 12]({{ '/assets/Understanding Color Management/Intro/image-11.webp' | relative_url }})
 
 RGB和CMYK仅仅是给设备的指令，虽然我们可以猜测这些指令可能会创造出什么样的颜色，但最终确切的颜色将取决于设备及其配置。因此，虽然RGB和CMYK必然是各自RGB和CMYK设备可以轻易理解的单位，但它们并不是真正的色彩规范，而更好地被称为**给设备的指令**。我们说RGB/CMYK是**设备相关的色彩规范**，因为所创造出的颜色将取决于设备及其配置。
 
@@ -251,7 +251,7 @@ RGB和CMYK仅仅是给设备的指令，虽然我们可以猜测这些指令可�
 
 国际照明委员会（Commission Internationale de l’Eclairage, CIE）定义了多种设备无关的色彩系统。所谓“设备无关”，是指这些系统建立在对一个色彩样本的**测量**基础之上，而无需关心这个样本是如何制作出来的。因此，CIE系统可以被视为一种对色彩的**描述符**或**规范**。多年来，CIE组织指定了多种设备无关色彩系统；在色彩管理中被广泛应用的两个体系是 CIE 1931 Yxy 和 CIE 1976 L\*a\*b\* 色彩空间（图1.12）。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-12.png)
+![第一章 引言 — 图 13]({{ '/assets/Understanding Color Management/Intro/image-12.webp' | relative_url }})
 
 Yxy系统是一个发布于1931年的较早体系，其图表形似马蹄（图1.12a）。在Yxy系统中，颜色通过其在**色度图（chromaticity diagram）**上的x和y坐标来指定。在此色度图中，绿色部分占据了非常大的区域，从而将蓝色和红色的区域压缩到了较小的角落里。
 
@@ -266,13 +266,13 @@ Yxy和L\*a\*b\*均为设备无关的色彩模型，它们不与任何特定设�
 
 每台相机都有其自身独特的响应特性，因此，如果我们使用不同型号的尼康相机，或是佳能、索尼的相机，（对于同一个红色物体）得到的RGB像素值将会不同。色彩管理并不会直接将设备的RGB值发送给打印机，而是通过相机特性文件（在本例中，如图下方所示，该文件是“Adobe RGB (1998)”），将设备的RGB值转换为与设备无关的L\*a\*b\*值，正如信息面板中显示的那样。相机的RGB值被从RGB转换到L\*a\*b\*。这些L\*a\*b\*值是对色彩的无歧义的描述，并被用来向打印系统传达色彩要求。在本例中，这个红色的L\*a\*b\*值为 L\* = 43, a\* = 68, b\* = 46。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-13.png)
+![第一章 引言 — 图 14]({{ '/assets/Understanding Color Management/Intro/image-13.webp' | relative_url }})
 
 
 当我们打印图像时，过程是相反的，也就是说，我们指定一个L\*a\*b\*值，然后由一个ICC特性文件来确定每台打印机产生该颜色所必需的特定CMYK指令，如图1.14所示。每个打印机特性文件都接收到相同的 L\*a\*b\* 指令 (L\* = 43, a\* = 68, b\* = 46)，并且每个特性文件都被用来确定将产生此颜色的CMYK油墨的适当用量。我们可以看到，具有相同 L\*a\*b\* 值 (L\* = 43, a\* = 68, b\* = 46) 的同一个红色，是由因打印机类型而异的CMYK指令创建的。这个实验是在瑞尔森大学（Ryerson University）的图形传播管理学院使用真实设备进行的。这个过程“适应”了每台独立打印机的特定色彩特性和行为。
 
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-14.png)
+![第一章 引言 — 图 15]({{ '/assets/Understanding Color Management/Intro/image-14.webp' | relative_url }})
 
 总而言之，设备只能处理与设备相关的RGB或CMYK，因此来自数码相机的图像必然是RGB格式，而发送到打印机的图像数据也必然是打印机可以接受的单位，即CMYK。然而，**在中间环节，L\*a\*b\*被用作一个通用的交换空间**，用于在从源到目标传递色彩信息的过程中，通过RGB到L\*a\*b\*的转换来补偿输入设备的特性，并通过L\*a\*b\*到CMYK的转换来补偿打印机的特性。
 
@@ -281,7 +281,7 @@ Yxy和L\*a\*b\*均为设备无关的色彩模型，它们不与任何特定设�
 
 实际的色彩管理流程可以用3C来定义：**校准 (calibration)**、**特性化 (characterization)** 和 **转换 (conversion)**，如图1.15所示。在本书的后续内容中，我们将根据色彩管理的这3C原则来制作和使用特性文件。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-15.png)
+![第一章 引言 — 图 16]({{ '/assets/Understanding Color Management/Intro/image-15.webp' | relative_url }})
 
 **校准**指的是为一个设备建立一个固定的、可重复的状态。对于一台显示器来说，这可能意味着调整其亮度和对比度设置。对于一台打印机来说，这可能意味着确定一种介质类型和打印分辨率的设置。任何会改变图像颜色的因素都必须被识别并“锁定”。校准包含建立某个已知的初始状态，一种监控该状态的方法，以及当设备状态发生漂移时，有能力将其恢复到校准过的状态。
 
@@ -315,7 +315,7 @@ Yxy和L\*a\*b\*均为设备无关的色彩模型，它们不与任何特定设�
 
 制作自定义特性文件的程序基于色彩管理的3C原则——校准、特性化和转换。例如，要制作一个打印机特性文件，用户需要**校准**设备，然后通过打印和测量测试图表来**特性化**该系统，如图1.16a所示。根据您正在进行特性化的设备（RGB打印机、多色印刷工艺等），有多种测试图表可供选择。IT8.7/4是一个包含1617个色块的图表，通常用于为CMYK印刷工艺建立特性文件，如图1.16a所示。图1.16b显示了如何使用X-Rite i1iO分光光度计来测量测试图表，以创建一个自定义打印机特性文件。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-16.png)
+![第一章 引言 — 图 17]({{ '/assets/Understanding Color Management/Intro/image-16.webp' | relative_url }})
 
 图像数据的**转换**发生在诸如Adobe Photoshop之类的软件应用程序或打印机的RIP（光栅图像处理器）中。
 
@@ -329,7 +329,7 @@ Yxy和L\*a\*b\*均为设备无关的色彩模型，它们不与任何特定设�
 
 要使用一个通用特性文件，用户需要获取确切的介质，使用特定的打印机品牌和型号，加载校准文件以创建正确的环境，然后在软件对话框中选择提供的ICC特性文件。通常，可能需要进行一次重新校准和验证，以确保提供的配置文件与本地配置相匹配。在图1.17所示的例子中，一卷爱普生高级光泽相纸被用于一台爱普生Stylus Pro 9900喷墨打样机，对于这种纸张类型，一个现成的通用特性文件可以从EFI Fiery XF的下拉菜单中选择。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-17.png)
+![第一章 引言 — 图 18]({{ '/assets/Understanding Color Management/Intro/image-17.webp' | relative_url }})
 
 当打印系统的行为被很好地控制，并且所有参数都已知时，一个通用特性文件可以非常准确。很明显，使用通用特性文件非常方便，因为用户无需自己制作ICC特性文件，但用户仍然能够为其打印条件拥有一个特定的特性文件。通用特性文件现在被广泛用于喷墨打印、打样和数码印刷设备中。
 
@@ -343,7 +343,7 @@ Yxy和L\*a\*b\*均为设备无关的色彩模型，它们不与任何特定设�
 
 sRGB是一个被广泛用于平板显示器、网页浏览器、平板和移动设备的RGB特性文件。像所有标准特性文件一样，sRGB特性文件是基于**一类**设备的真实响应。sRGB是基于对阴极射线管（CRT）类型显示器的较早技术分析。图1.18a显示了在L\*a\*b\*色彩空间中不同CRT显示器色域的三维视图。请注意它们是多么相似，以及平均而言，sRGB（灰色部分）很能代表一个典型CRT显示器的特性。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-18.png)
+![第一章 引言 — 图 19]({{ '/assets/Understanding Color Management/Intro/image-18.webp' | relative_url }})
 
 sRGB是基于传统的CRT设备，然而，它现在已被接受为许多RGB图像的标准特性文件，例如智能手机、平板电脑和互联网应用。
 
@@ -353,7 +353,7 @@ sRGB是基于传统的CRT设备，然而，它现在已被接受为许多RGB图�
 
 标准特性文件在CMYK应用中很常见。印刷机是一个在高运营速率下运行的复杂机器，如图1.19所示，一个例子是一台4色海德堡胶印机。通常很难使用自定义色彩管理工具，并且用户对为每个单独的印刷压力机管理大量的特性文件不感兴趣。印刷机可以被操作，使其产生的密度/L\*a\*b\*值在公认的印刷标准之内，这被称为**参考打印条件**。与其为每个单独的印刷机进行特性化，对于设计师、印前和打样来说，使用一个代表该条件的标准特性文件更为方便。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-19.png)
+![第一章 引言 — 图 20]({{ '/assets/Understanding Color Management/Intro/image-19.webp' | relative_url }})
 
 印刷商、印刷品买家和供应商委员会共同努力，基于不同的参考打印条件开发了标准化的特性文件。这些数据集是基于实验性的印刷运行，因此它们代表了在现实生活中可以实现的结果。有许多现成的标准特性文件可用于不同的印刷条件，如用于卷筒纸胶印和凹版印刷杂志的SWOP，用于商业印刷的GRACoL/FOGRA，以及用于报纸的SNAP/WAN-IFRA。标准特性文件在商业印刷和打样的许多环节中都非常宝贵，我们将在第8章《印刷机和打印机特性文件制作》中详细讨论。
 
@@ -368,7 +368,7 @@ sRGB是基于传统的CRT设备，然而，它现在已被接受为许多RGB图�
 
 一个设备的**色域**被定义为该设备能够产生的颜色的范围或广度。数码相机、显示器和打印机采用不同的成像技术，因此具有不同的色域。设备的色域是在建立特性文件的过程中测量的，这意味着特性文件中包含了色域信息。色域信息可以从特性文件中提取出来，并在三维软件中进行可视化。图1.20比较了一个显示器和一个打印机的色域。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-20.png)
+![第一章 引言 — 图 21]({{ '/assets/Understanding Color Management/Intro/image-20.webp' | relative_url }})
 
 因为成像设备以完全不同的方式工作（RGB或CMYK），它们可能无法创造出完全相同的颜色范围。我们可以在RGB和CMYK两大类设备之间做出一个宽泛的区分。大多数印刷工艺在减色色彩成像过程中使用CMYK油墨，因此，总的来说，**打印机和印刷机的色域比加色色彩设备（如数码相机和平板显示器）的色域要小**。
 
@@ -378,13 +378,13 @@ RGB和CMYK色域之间的差异，意味着有时您在屏幕上能看到一个�
 
 Photoshop的预览机制允许您看到图像在不同打印机或印刷工艺上的样子，如图1.21所示。由于ICC特性文件包含了关于打印机色域的信息，只需在支持色彩的软件（如Adobe Photoshop）中选择相应的特性文件，就有可能看到打印图像的再现效果。例如，您可以轻松地看到您的图像在彩色激光打印机、爱普生SureColor P7000喷墨打印机或SWOP印刷工艺上的样子。所有这些都可以在不打印一张图片的情况下完成，您甚至不需要有实际的打印机；您只需要它们的特性文件就可以进行这种类型的模拟。所以，色彩管理无法解决色域压缩的问题，但它可以提供一个准确的警告，告诉您哪些颜色会受到影响以及会以何种方式受到影响。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-21.png)
+![第一章 引言 — 图 22]({{ '/assets/Understanding Color Management/Intro/image-21.webp' | relative_url }})
 
 ## 1.13 渲染意图
 
 色彩管理提供了另一种帮助“管理”色域局限性的方法。如果一种颜色无法被打印，色彩管理系统会帮助我们找到最佳的替代色。用户可以从不同的方法中选择来寻找替代色。这些用来寻找替代色的方法被称为**渲染意图**，通常，色彩转换的渲染意图是在应用程序的对话框中指定的，例如在Adobe Photoshop中，如图1.22所示。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-22.png)
+![第一章 引言 — 图 23]({{ '/assets/Understanding Color Management/Intro/image-22.webp' | relative_url }})
 
 ICC指定了四种标准的色域压缩方案，称为***渲染意图***。这些渲染意图的官方术语是：**感知 (perceptual)**、**相对比色 (relative colorimetric)**、**绝对比色 (absolute colorimetric)** 和 **饱和度 (saturation)**。让我们结合不同的图像类型来看看这些渲染意图。
 
@@ -392,13 +392,13 @@ ICC指定了四种标准的色域压缩方案，称为***渲染意图***。这�
 
 事实上，感知渲染非常有可能改变图像从原始到复制品的颜色。这听起来像一个糟糕的选择，但在进行这种色域压缩时，**颜色之间的关系被保留了下来**，这创造了最好看和最悦目的图像。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-23.png)
+![第一章 引言 — 图 24]({{ '/assets/Understanding Color Management/Intro/image-23.webp' | relative_url }})
 
 当我们需要在复制品中获得最高准确性时，会使用**比色**意图。比色意图有两种——绝对和相对。我们用一个战斗机的类比来解释相对和绝对，如图1.24a所示。一架F-22战斗机有两种速度——相对于加油机的速度和相对于地面的绝对速度。在某些情况下，相对速度很重要；在另一些情况下，绝对速度可能更相关。例如，当战斗机接近加油机时，它们的相对速度至关重要。
 
 在色彩管理中，我们根据情况可能会使用绝对或相对的色彩测量。在进行并排比较时，或为一次印刷任务创建打样时，我们通常会使用**绝对比色**意图，如图1.24b所示。然而，当在一系列不同的印刷出版物中再现一个图像时，**相对比色**可能更合适。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-24.png)
+![第一章 引言 — 图 25]({{ '/assets/Understanding Color Management/Intro/image-24.webp' | relative_url }})
 
 **饱和度**意图通过利用目标设备的完整色域来使图像更加鲜艳。此意图完全不考虑任何对颜色的真实再现，因为图形的精确颜色是无关紧要的。此意图用于商业图形，如需要明亮、鲜艳的颜色以使图形脱颖而出并易于理解的图表和饼图，如图1.23c所示。由于此意图的特性，它主要用于商业图形，不常用于处理图像。
 
@@ -444,7 +444,7 @@ ICC指定了四种标准的色域压缩方案，称为***渲染意图***。这�
 
 **Pantone**系统是一种广泛用于指定和再现**专色**的方法，如图1.25所示。在商业印刷中，如果需要一种特殊的颜色，就会制作一块单独的、包含该专色的印版。该颜色的实际色相可以在Pantone Matching System中指定，如图1.25所示。用于此颜色的油墨是预先混合好的，并与扇形色卡小册子中的色样相匹配，设计师和印前操作员可以参考该色卡。这些带编号色块的数字等效值可在Adobe Photoshop和Illustrator等程序中使用。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-25.png)
+![第一章 引言 — 图 26]({{ '/assets/Understanding Color Management/Intro/image-25.webp' | relative_url }})
 
 关于Pantone和专色的再现，将在第9章《专色和广色域印刷》中详细讨论。
 
@@ -456,7 +456,7 @@ ICC指定了四种标准的色域压缩方案，称为***渲染意图***。这�
 
 ICC色彩管理提供了一个框架，可用于在整个制作链中传递色彩信息，如图1.26所示。传统上，图像源自摄影师或客户，经过设计师或排版部门处理，然后交给印前并最终进入印刷环节。每个部门都在自己的“筒仓”中工作，不与上游或下游进行色彩信息交流。例如，当设计师选择了一系列丰富的颜色，而印刷机却无法达到这些颜色时，问题就出现了。
 
-![alt text]({{ site.baseurl }}/assets/Understanding Color Management/Intro/image-26.png)
+![第一章 引言 — 图 27]({{ '/assets/Understanding Color Management/Intro/image-26.png' | relative_url }})
 
 ICC框架打破了这些壁垒，允许所有参与者预览、编辑和批准颜色。这确保了客户能够意识到什么是可能的，什么是不可能的，不会有意外，也不会有不切实际的期望，换句话说，就是“WYSIWYG”——所见即所得。
 
