@@ -65,7 +65,18 @@ img {
       --bg: #FFF;
       --bg-secondary: #f3f4f6;
       --border: #d1d5db;
-      --code-bg: #111827;
+      --code-bg: #faf8f2;
+      --code-fg: #374151;
+      --code-border: #e7e2d8;
+      --syntax-highlight: #eee9dc;
+      --syntax-comment: #667064;
+      --syntax-error: #a62f3e;
+      --syntax-keyword: #7540a0;
+      --syntax-number: #9b4b16;
+      --syntax-operator: #126c73;
+      --syntax-string: #3d6c35;
+      --syntax-type: #795d17;
+      --syntax-function: #285e9a;
       --ambient-node: #4f46e5;
       --ambient-accent: #0891b2;
       --headings: #1e293b;
@@ -87,6 +98,8 @@ img {
       --bg-secondary: #323945;
       --border: #4b5563;
       --code-bg: #29313b;
+      --code-fg: #f2f0ec;
+      --code-border: #4b5563;
       --ambient-node: #91a7ff;
       --ambient-accent: #67e8f9;
       --text: #adb5bd;

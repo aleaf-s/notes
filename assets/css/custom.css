@@ -311,16 +311,23 @@ a:hover {
 }
 
 .highlight,
+pre,
 div.highlighter-rouge pre,
 div.highlighter-rouge pre code,
 pre code.highlighter-rouge {
   background: var(--code-bg);
+  color: var(--code-fg);
   border-radius: 8px;
+}
+
+pre code {
+  background: transparent;
+  color: var(--code-fg);
 }
 
 div.highlighter-rouge pre,
 pre {
-  border: 1px solid var(--border);
+  border: 1px solid var(--code-border);
   overflow-x: auto;
 }
 
