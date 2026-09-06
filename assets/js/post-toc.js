@@ -77,46 +77,69 @@
   );
 
   function activate(id) {
-    linksById.forEach(function (link) {
-      link.classList.toggle("is-active", link.hash.slice(1) === encodeURIComponent(id));
+    linksById.forEach(function (link, linkId) {
+      var active = linkId === id;
+      link.classList.toggle("is-active", active);
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   }
 
-  if (!("IntersectionObserver" in window)) {
-    activate(headings[0].id);
-    return;
+  var ticking = false;
+
+  function updateFromScroll() {
+    ticking = false;
+    // Include headings just below scroll-margin-top, and keep the preceding
+    // section active when scrolling through long content between headings.
+    var activationLine = Math.min(120, window.innerHeight * 0.15);
+    var active = headings[0];
+    headings.forEach(function (heading) {
+      if (heading.getBoundingClientRect().top <= activationLine) {
+        active = heading;
+      }
+    });
+    activate(active.id);
   }
 
-  var visible = new Map();
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          visible.set(entry.target.id, entry.boundingClientRect.top);
-        } else {
-          visible.delete(entry.target.id);
-        }
-      });
-
-      if (visible.size === 0) {
-        return;
-      }
-
-      var activeId = Array.from(visible.entries()).sort(function (a, b) {
-        return Math.abs(a[1]) - Math.abs(b[1]);
-      })[0][0];
-
-      activate(activeId);
-    },
-    {
-      rootMargin: "-12% 0px -70% 0px",
-      threshold: [0, 1]
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateFromScroll);
     }
-  );
+  }
 
-  headings.forEach(function (heading) {
-    observer.observe(heading);
+  linksById.forEach(function (link, id) {
+    link.addEventListener("click", function () {
+      activate(id);
+    });
   });
 
-  activate(headings[0].id);
+  function updateFromHash() {
+    var id;
+    try {
+      id = decodeURIComponent(window.location.hash.slice(1));
+    } catch (_) {
+      requestUpdate();
+      return;
+    }
+    if (linksById.has(id)) {
+      activate(id);
+    } else {
+      requestUpdate();
+    }
+  }
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  window.addEventListener("hashchange", updateFromHash);
+  window.addEventListener("load", requestUpdate);
+  // Lazy images and MathJax may change section positions after initial render.
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(requestUpdate).observe(body);
+  }
+  updateFromScroll();
+  updateFromHash();
 })();

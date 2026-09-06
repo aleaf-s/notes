@@ -7,7 +7,7 @@
   "pasteImage.showFilePathConfirmInputBox": true,
   "pasteImage.filePathConfirmInputBoxMode": "onlyName",
   "pasteImage.defaultName": "Y-MM-DD-HH-mm-ss",
-  "pasteImage.insertPattern": "![${imageFileNameWithoutExt}]({{ '/${imageFilePath}' | relative_url }})",
+  "pasteImage.insertPattern": "![${imageFileNameWithoutExt}]({{ '/${imageFilePath}' | asset_url }})",
   "files.exclude": {
     "**/.jekyll-cache": true,
     "**/_site": true,

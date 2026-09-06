@@ -86,6 +86,11 @@ Invoke-Check `
   -Paths @("_config.yml")
 
 if (Test-Path "_site") {
+  & ruby (Join-Path $PSScriptRoot "check-images.rb")
+  if ($LASTEXITCODE -ne 0) {
+    $script:failed = $true
+  }
+
   Invoke-Check `
     -Name "No Markdown-emphasis fragments inside generated math" `
     -Pattern '<em>\{|</em>\{' `

@@ -31,11 +31,12 @@ Get-ChildItem (Join-Path $repoRoot "_posts") -Recurse -Filter *.md -File | ForEa
       }
 
       if ($url -match '^\{\{\s*site\.baseurl\s*\}\}(?<path>/assets/.+)$') {
-        $url = "{{ '$($Matches['path'])' | relative_url }}"
+        $url = "{{ '$($Matches['path'])' | asset_url }}"
       } elseif ($url -match '^/notes(?<path>/assets/.+)$') {
-        $url = "{{ '$($Matches['path'])' | relative_url }}"
+        $url = "{{ '$($Matches['path'])' | asset_url }}"
       }
 
+      $url = $url.Replace('| relative_url', '| asset_url')
       $changedImageCounter.Value++
       "![$alt]($url)"
     }

@@ -50,10 +50,10 @@ category: 分类名称
 
 工作区已为 Paste Image 扩展配置好保存和引用规则：
 
-1. 在 Markdown 文件中粘贴截图。
+1. 在已保存的 Markdown 文件中按 `Ctrl+Alt+V` 调用 Paste Image（普通 `Ctrl+V` 使用的是 VS Code 内置粘贴）。
 2. 输入能够描述图意的简短名称，例如 `cie-1931-色匹配函数`。
 3. 图片会保存到 `assets/<文章文件名>/`。
-4. 扩展会插入经过 `relative_url` 处理的 Jekyll 图片路径，避免与仓库名称耦合。
+4. 扩展会插入经过 `asset_url` 处理的 Jekyll 图片路径，自动添加站点前缀并保留中文、全角标点等文件名字符。该过滤器由 `_plugins/asset_url.rb` 提供。
 
 整理旧文章中的图片说明和路径：
 
