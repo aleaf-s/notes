@@ -337,22 +337,63 @@ li code {
   white-space: nowrap;
 }
 
-table {
-  display: block;
+.table-scroll {
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
-  border-collapse: collapse;
+  border: 1px solid var(--table-border);
+  border-radius: 8px;
+  background: var(--bg);
   margin: 1.5rem 0;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
 }
 
-th,
-td {
+.table-scroll > table {
+  display: table;
+  width: 100%;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  margin: 0;
+}
+
+.table-scroll > table > :is(thead, tbody, tfoot) > tr > :is(th, td) {
   width: auto;
-  min-width: 8rem;
-  border: 1px solid var(--border);
-  padding: 0.45rem 0.65rem;
+  min-width: 5rem;
+  border: 0;
+  padding: 12px 16px;
   vertical-align: top;
+  line-height: 1.65;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.table-scroll > table > thead > tr > th {
+  background: var(--table-header);
+  color: var(--table-header-text);
+  font-weight: 700;
+  text-align: left !important;
+}
+
+.table-scroll > table > tbody > tr + tr > :is(th, td),
+.table-scroll > table > thead + tbody > tr:first-child > :is(th, td),
+.table-scroll > table > tfoot > tr > :is(th, td) {
+  border-top: 1px solid var(--table-border);
+}
+
+.table-scroll > table > tbody > tr:focus-within > :is(th, td) {
+  background: var(--table-hover);
+}
+
+@media (hover: hover) {
+  .table-scroll > table > tbody > tr:hover > :is(th, td) {
+    background: var(--table-hover);
+  }
 }
 
 img {

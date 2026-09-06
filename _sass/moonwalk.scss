@@ -34,13 +34,6 @@ li { margin: 0.4em 0; }
   padding: 4em 2em;
 }
 
-table, th, td {
-  width: 100%;
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4em;
-}
-
 div.highlighter-rouge pre code, pre code.highlighter-rouge {
   display: block;
   overflow-x: auto;
@@ -68,6 +61,10 @@ img {
       --code-bg: #faf8f2;
       --code-fg: #374151;
       --code-border: #e7e2d8;
+      --table-header: #faf8f2;
+      --table-header-text: #374151;
+      --table-border: #e2e5e9;
+      --table-hover: #f5f6f8;
       --syntax-highlight: #eee9dc;
       --syntax-comment: #667064;
       --syntax-error: #a62f3e;
@@ -100,6 +97,10 @@ img {
       --code-bg: #29313b;
       --code-fg: #f2f0ec;
       --code-border: #4b5563;
+      --table-header: #29313b;
+      --table-header-text: #e2e8f0;
+      --table-border: #3b434e;
+      --table-hover: #262d36;
       --ambient-node: #91a7ff;
       --ambient-accent: #67e8f9;
       --text: #adb5bd;
