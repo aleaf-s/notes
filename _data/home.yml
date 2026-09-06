@@ -2,7 +2,7 @@ navbar_entries:
   - title: 专栏
     url: blog.html
   
-  - title: 知乎主页
+  - title: 微信公众号：光色手记
     url: false
 
   - title: 关于我
