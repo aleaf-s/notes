@@ -11,7 +11,7 @@
   var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   var nodes = [];
   var connections = new Set();
-  var frameId = 0;
+  var frameId = null;
   var lastFrame = 0;
   var viewportWidth = 0;
   var viewportHeight = 0;
@@ -96,7 +96,6 @@
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
 
     rebuildNodes();
-    draw(performance.now(), true);
   }
 
   function nodePosition(node, scrollProgress) {
@@ -157,7 +156,6 @@
     }
 
     if (!forceDraw && timestamp - lastFrame < 33) {
-      frameId = window.requestAnimationFrame(draw);
       return;
     }
 
@@ -220,19 +218,39 @@
 
     context.globalAlpha = 1;
 
-    if (!motionQuery.matches && !document.hidden) {
-      frameId = window.requestAnimationFrame(draw);
+  }
+
+  // Keep frame scheduling separate from drawing so event-driven redraws
+  // cannot create additional animation loops.
+  function shouldAnimate() {
+    return isActive && !motionQuery.matches && !document.hidden;
+  }
+
+  function scheduleFrame() {
+    if (frameId === null && shouldAnimate()) {
+      frameId = window.requestAnimationFrame(animate);
     }
   }
 
-  function start() {
-    window.cancelAnimationFrame(frameId);
-    lastFrame = 0;
-    draw(performance.now(), true);
-
-    if (isActive && !motionQuery.matches && !document.hidden) {
-      frameId = window.requestAnimationFrame(draw);
+  function animate(timestamp) {
+    frameId = null;
+    if (!shouldAnimate()) {
+      return;
     }
+    draw(timestamp, false);
+    scheduleFrame();
+  }
+
+  function start() {
+    if (frameId !== null) {
+      window.cancelAnimationFrame(frameId);
+      frameId = null;
+    }
+    lastFrame = 0;
+    if (!document.hidden) {
+      draw(performance.now(), true);
+    }
+    scheduleFrame();
   }
 
   window.addEventListener("resize", function () {
@@ -257,7 +275,7 @@
 
   new MutationObserver(function () {
     readColors();
-    draw(performance.now(), true);
+    start();
   }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
   readColors();
