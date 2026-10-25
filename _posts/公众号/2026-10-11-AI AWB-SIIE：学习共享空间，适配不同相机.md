@@ -3,7 +3,6 @@ layout: post
 title: "AI AWB-SIIE：学习共享空间，适配不同相机"
 date: 2026-10-11
 category: "公众号"
-tags: ["AI","AWB"]
 ---
 
 # 概述

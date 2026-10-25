@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img">
+<title>AE 闭环：统计、评价、决策与执行</title><desc>按功能划分的原理图；不表示某一版本固件的内部调用顺序。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#52647a" stroke-width="1.5"/></marker></defs>
+<rect width="1120" height="100%" fill="#ffffff"/>
+<text x="48" y="53" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="32" font-weight="600" text-anchor="start"><tspan x="48" dy="0">AE 闭环：统计、评价、决策与执行</tspan></text>
+<text x="48" y="91" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" text-anchor="start"><tspan x="48" dy="0">按功能划分的原理图；不表示某一版本固件的内部调用顺序。</tspan></text>
+<rect x="414" y="119" width="658" height="44" rx="6" fill="#eaf2fc" stroke="none" stroke-width="1.5"/>
+<text x="743" y="149" fill="#2764aa" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" text-anchor="middle"><tspan x="743" dy="0">配置：目标亮度、优先策略、权重与影响上限</tspan></text>
+<rect x="48" y="202" width="292" height="132" rx="12" fill="#f4f7fa" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="194" y="242" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="600" text-anchor="middle"><tspan x="194" dy="0">1  采集当前帧</tspan></text>
+<text x="194" y="281" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="194" dy="0">场景、传感器与</tspan><tspan x="194" dy="33">当前曝光参数</tspan></text>
+<rect x="414" y="202" width="292" height="132" rx="12" fill="#f4f7fa" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="560" y="242" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="600" text-anchor="middle"><tspan x="560" dy="0">2  读取统计</tspan></text>
+<text x="560" y="281" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="560" dy="0">分块均值、全局均值</tspan><tspan x="560" dy="33">直方图等</tspan></text>
+<rect x="780" y="202" width="292" height="132" rx="12" fill="#eaf2fc" stroke="#a9c5e8" stroke-width="1.5"/>
+<text x="926" y="242" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="600" text-anchor="middle"><tspan x="926" dy="0">3  评价亮度</tspan></text>
+<text x="926" y="281" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="926" dy="0">按策略重视亮处或暗处</tspan><tspan x="926" dy="33">得到测光评价量</tspan></text>
+<rect x="780" y="450" width="292" height="132" rx="12" fill="#eaf2fc" stroke="#a9c5e8" stroke-width="1.5"/>
+<text x="926" y="490" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="600" text-anchor="middle"><tspan x="926" dy="0">4  计算调整量</tspan></text>
+<text x="926" y="529" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="926" dy="0">与亮度目标比较</tspan><tspan x="926" dy="33">加入收敛与约束</tspan></text>
+<rect x="414" y="450" width="292" height="132" rx="12" fill="#f4f7fa" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="560" y="490" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="600" text-anchor="middle"><tspan x="560" dy="0">5  曝光分配</tspan></text>
+<text x="560" y="529" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="560" dy="0">曝光时间、各级增益</tspan><tspan x="560" dy="33">帧率、抗闪等限制</tspan></text>
+<rect x="48" y="450" width="292" height="132" rx="12" fill="#f4f7fa" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="194" y="490" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="600" text-anchor="middle"><tspan x="194" dy="0">6  参数生效</tspan></text>
+<text x="194" y="529" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="194" dy="0">经传感器生效延时</tspan><tspan x="194" dy="33">形成后续帧</tspan></text>
+<line x1="340" y1="268" x2="403" y2="268" stroke="#52647a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="706" y1="268" x2="769" y2="268" stroke="#52647a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="926" y1="334" x2="926" y2="439" stroke="#52647a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="780" y1="516" x2="717" y2="516" stroke="#52647a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="414" y1="516" x2="351" y2="516" stroke="#52647a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="194" y1="450" x2="194" y2="345" stroke="#52647a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<line x1="926" y1="164" x2="926" y2="190" stroke="#52647a" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="560" y="645" fill="#2764aa" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" text-anchor="middle"><tspan x="560" dy="0">本文重点：改变曝光判断的取舍，最终影响全局曝光。</tspan></text>
+<text x="560" y="687" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" text-anchor="middle"><tspan x="560" dy="0">分块参与测光，不等于每个分块都有独立快门。</tspan></text>
+<text x="48" y="735" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="start"><tspan x="48" dy="0">原创原理图 · 同一曝光帧的全局 AE；多帧 WDR 的曝光分配另有约束。</tspan></text>
+</svg>

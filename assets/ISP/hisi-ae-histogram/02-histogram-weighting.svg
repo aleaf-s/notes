@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="880" viewBox="0 0 1120 880" role="img">
+<title>像素没有改变，改变的是它们在测光中的分量</title><desc>教学例子：90 个像素亮度为 40，另 10 个像素亮度为 200。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#52647a" stroke-width="1.5"/></marker></defs>
+<rect width="1120" height="100%" fill="#ffffff"/>
+<text x="48" y="53" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="32" font-weight="600" text-anchor="start"><tspan x="48" dy="0">像素没有改变，改变的是它们在测光中的分量</tspan></text>
+<text x="48" y="91" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" text-anchor="start"><tspan x="48" dy="0">教学例子：90 个像素亮度为 40，另 10 个像素亮度为 200。</tspan></text>
+<line x1="132" y1="395" x2="1004" y2="395" stroke="#e8edf3" stroke-width="1.3"/>
+<text x="114" y="403" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="end"><tspan x="114" dy="0">0</tspan></text>
+<line x1="132" y1="272.5" x2="1004" y2="272.5" stroke="#e8edf3" stroke-width="1.3"/>
+<text x="114" y="280.5" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="end"><tspan x="114" dy="0">50</tspan></text>
+<line x1="132" y1="150" x2="1004" y2="150" stroke="#e8edf3" stroke-width="1.3"/>
+<text x="114" y="158" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="end"><tspan x="114" dy="0">100</tspan></text>
+<line x1="132" y1="395" x2="132" y2="402" stroke="#52647a" stroke-width="1.5"/>
+<text x="132" y="431" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="132" dy="0">0</tspan></text>
+<line x1="350.85490196078433" y1="395" x2="350.85490196078433" y2="402" stroke="#52647a" stroke-width="1.5"/>
+<text x="350.85490196078433" y="431" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="350.85490196078433" dy="0">64</tspan></text>
+<line x1="569.7098039215687" y1="395" x2="569.7098039215687" y2="402" stroke="#52647a" stroke-width="1.5"/>
+<text x="569.7098039215687" y="431" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="569.7098039215687" dy="0">128</tspan></text>
+<line x1="788.5647058823529" y1="395" x2="788.5647058823529" y2="402" stroke="#52647a" stroke-width="1.5"/>
+<text x="788.5647058823529" y="431" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="788.5647058823529" dy="0">192</tspan></text>
+<line x1="1004" y1="395" x2="1004" y2="402" stroke="#52647a" stroke-width="1.5"/>
+<text x="1004" y="431" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle"><tspan x="1004" dy="0">255</tspan></text>
+<line x1="132" y1="150" x2="132" y2="395" stroke="#52647a" stroke-width="1.6"/>
+<line x1="132" y1="395" x2="1004" y2="395" stroke="#52647a" stroke-width="1.6"/>
+<text x="568" y="474" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" text-anchor="middle"><tspan x="568" dy="0">亮度档位 Y（教学用 8 bit）</tspan></text>
+<text x="52" y="272.5" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" text-anchor="middle" transform="rotate(-90 52 272.5)"><tspan x="52" dy="0">实际像素数 N</tspan></text>
+<rect x="244.78431372549016" y="174.5" width="48" height="220.5" rx="0" fill="#557da8" stroke="none" stroke-width="1.5"/>
+<text x="268.78431372549016" y="157.5" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" text-anchor="middle"><tspan x="268.78431372549016" dy="0">90 个</tspan></text>
+<rect x="791.9215686274509" y="370.5" width="48" height="24.5" rx="0" fill="#e3a64f" stroke="none" stroke-width="1.5"/>
+<text x="815.9215686274509" y="353.5" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" text-anchor="middle"><tspan x="815.9215686274509" dy="0">10 个</tspan></text>
+<text x="48" y="525" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="600" text-anchor="start"><tspan x="48" dy="0">加入权重后，各亮度档在平均值中的份额：</tspan></text>
+<rect x="755" y="505" width="20" height="20" rx="0" fill="#557da8" stroke="none" stroke-width="1.5"/>
+<text x="785" y="523" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" text-anchor="start"><tspan x="785" dy="0">暗档</tspan></text>
+<rect x="905" y="505" width="20" height="20" rx="0" fill="#e3a64f" stroke="none" stroke-width="1.5"/>
+<text x="935" y="523" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" text-anchor="start"><tspan x="935" dy="0">亮档</tspan></text>
+<text x="48" y="595" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="start"><tspan x="48" dy="0">普通平均</tspan></text>
+<text x="48" y="625" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="400" text-anchor="start"><tspan x="48" dy="0">权重 1 : 1</tspan></text>
+<rect x="283" y="571" width="521.1" height="41" rx="0" fill="#557da8" stroke="none" stroke-width="1.5"/>
+<rect x="804.1" y="571" width="57.899999999999984" height="41" rx="0" fill="#e3a64f" stroke="none" stroke-width="1.5"/>
+<text x="293" y="640" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="400" text-anchor="start"><tspan x="293" dy="0">有效份数 90 : 10</tspan></text>
+<text x="1060" y="601" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="600" text-anchor="end"><tspan x="1060" dy="0">均值 56</tspan></text>
+<text x="48" y="683" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="start"><tspan x="48" dy="0">高光加权</tspan></text>
+<text x="48" y="713" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="400" text-anchor="start"><tspan x="48" dy="0">权重 1 : 9</tspan></text>
+<rect x="283" y="659" width="289.5" height="41" rx="0" fill="#557da8" stroke="none" stroke-width="1.5"/>
+<rect x="572.5" y="659" width="289.5" height="41" rx="0" fill="#e3a64f" stroke="none" stroke-width="1.5"/>
+<text x="293" y="728" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="400" text-anchor="start"><tspan x="293" dy="0">有效份数 90 : 90</tspan></text>
+<text x="1060" y="689" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="600" text-anchor="end"><tspan x="1060" dy="0">均值 120</tspan></text>
+<text x="48" y="771" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="start"><tspan x="48" dy="0">低光加权</tspan></text>
+<text x="48" y="801" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="400" text-anchor="start"><tspan x="48" dy="0">权重 9 : 1</tspan></text>
+<rect x="283" y="747" width="571.9390243902438" height="41" rx="0" fill="#557da8" stroke="none" stroke-width="1.5"/>
+<rect x="854.9390243902438" y="747" width="7.060975609756104" height="41" rx="0" fill="#e3a64f" stroke="none" stroke-width="1.5"/>
+<text x="293" y="816" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="400" text-anchor="start"><tspan x="293" dy="0">有效份数 810 : 10</tspan></text>
+<text x="1060" y="777" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="600" text-anchor="end"><tspan x="1060" dy="0">均值 41.95</tspan></text>
+<text x="48" y="855" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="start"><tspan x="48" dy="0">原创教学图 · 下方是加权后的贡献份额，实际像素数仍然是 90 个与 10 个。</tspan></text>
+</svg>

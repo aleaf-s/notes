@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1130" viewBox="0 0 1120 1130" role="img">
+<title>同一个曝光变化，会同时影响前景与窗外</title><desc>合成场景示意：对线性信号乘曝光倍数，再截断并做固定显示变换。</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#52647a" stroke-width="1.5"/></marker></defs>
+<rect width="1120" height="100%" fill="#ffffff"/>
+<text x="48" y="53" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="32" font-weight="600" text-anchor="start"><tspan x="48" dy="0">同一个曝光变化，会同时影响前景与窗外</tspan></text>
+<text x="48" y="91" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" text-anchor="start"><tspan x="48" dy="0">合成场景示意：对线性信号乘曝光倍数，再截断并做固定显示变换。</tspan></text>
+<defs><clipPath id="scene-0"><rect x="66" y="157" width="605" height="237"/></clipPath></defs><g clip-path="url(#scene-0)">
+<rect x="66" y="157" width="605" height="237" rx="0" fill="rgb(41,41,41)" stroke="none" stroke-width="1.5"/>
+<rect x="66" y="337.12" width="605" height="56.879999999999995" rx="0" fill="rgb(30,30,30)" stroke="none" stroke-width="1.5"/>
+<rect x="394" y="179" width="246" height="153" rx="0" fill="rgb(177,177,177)" stroke="none" stroke-width="1.5"/>
+<polygon points="403,322 459,221 523,322" fill="rgb(148,148,148)"/>
+<polygon points="503,322 567,203 630,322" fill="rgb(138,138,138)"/>
+<rect x="387" y="172" width="260" height="7" rx="0" fill="rgb(71,71,71)" stroke="none" stroke-width="1.5"/>
+<rect x="387" y="332" width="260" height="7" rx="0" fill="rgb(71,71,71)" stroke="none" stroke-width="1.5"/>
+<rect x="387" y="172" width="7" height="167" rx="0" fill="rgb(71,71,71)" stroke="none" stroke-width="1.5"/>
+<rect x="640" y="172" width="7" height="167" rx="0" fill="rgb(71,71,71)" stroke="none" stroke-width="1.5"/>
+<rect x="514" y="179" width="6" height="153" rx="0" fill="rgb(71,71,71)" stroke="none" stroke-width="1.5"/>
+<ellipse cx="231" cy="321" rx="86" ry="81" fill="rgb(28,28,28)"/>
+<ellipse cx="231" cy="243" rx="43" ry="54" fill="rgb(57,57,57)"/>
+<ellipse cx="231" cy="198" rx="39" ry="17" fill="rgb(21,21,21)"/>
+<ellipse cx="218" cy="237" rx="3.6" ry="3.6" fill="rgb(23,23,23)"/>
+<ellipse cx="245" cy="237" rx="3.6" ry="3.6" fill="rgb(23,23,23)"/>
+<line x1="220" y1="266" x2="244" y2="266" stroke="rgb(38,38,38)" stroke-width="3"/>
+</g>
+<text x="725" y="211" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="600" text-anchor="start"><tspan x="725" dy="0">较低曝光</tspan></text>
+<text x="725" y="263" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="start"><tspan x="725" dy="0">窗外层次较多</tspan><tspan x="725" dy="38">前景人脸更暗</tspan></text>
+<text x="725" y="360" fill="#2764aa" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="start"><tspan x="725" dy="0">曝光倍数 ×0.5</tspan></text>
+<defs><clipPath id="scene-1"><rect x="66" y="449" width="605" height="237"/></clipPath></defs><g clip-path="url(#scene-1)">
+<rect x="66" y="449" width="605" height="237" rx="0" fill="rgb(56,56,56)" stroke="none" stroke-width="1.5"/>
+<rect x="66" y="629.12" width="605" height="56.879999999999995" rx="0" fill="rgb(41,41,41)" stroke="none" stroke-width="1.5"/>
+<rect x="394" y="471" width="246" height="153" rx="0" fill="rgb(243,243,243)" stroke="none" stroke-width="1.5"/>
+<polygon points="403,614 459,513 523,614" fill="rgb(202,202,202)"/>
+<polygon points="503,614 567,495 630,614" fill="rgb(189,189,189)"/>
+<rect x="387" y="464" width="260" height="7" rx="0" fill="rgb(97,97,97)" stroke="none" stroke-width="1.5"/>
+<rect x="387" y="624" width="260" height="7" rx="0" fill="rgb(97,97,97)" stroke="none" stroke-width="1.5"/>
+<rect x="387" y="464" width="7" height="167" rx="0" fill="rgb(97,97,97)" stroke="none" stroke-width="1.5"/>
+<rect x="640" y="464" width="7" height="167" rx="0" fill="rgb(97,97,97)" stroke="none" stroke-width="1.5"/>
+<rect x="514" y="471" width="6" height="153" rx="0" fill="rgb(97,97,97)" stroke="none" stroke-width="1.5"/>
+<ellipse cx="231" cy="613" rx="86" ry="81" fill="rgb(39,39,39)"/>
+<ellipse cx="231" cy="535" rx="43" ry="54" fill="rgb(79,79,79)"/>
+<ellipse cx="231" cy="490" rx="39" ry="17" fill="rgb(28,28,28)"/>
+<ellipse cx="218" cy="529" rx="3.6" ry="3.6" fill="rgb(31,31,31)"/>
+<ellipse cx="245" cy="529" rx="3.6" ry="3.6" fill="rgb(31,31,31)"/>
+<line x1="220" y1="558" x2="244" y2="558" stroke="rgb(52,52,52)" stroke-width="3"/>
+</g>
+<text x="725" y="503" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="600" text-anchor="start"><tspan x="725" dy="0">中间曝光</tspan></text>
+<text x="725" y="555" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="start"><tspan x="725" dy="0">两端亮度作折中</tspan><tspan x="725" dy="38">未必满足主体需求</tspan></text>
+<text x="725" y="652" fill="#2764aa" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="start"><tspan x="725" dy="0">曝光倍数 ×1</tspan></text>
+<defs><clipPath id="scene-2"><rect x="66" y="741" width="605" height="237"/></clipPath></defs><g clip-path="url(#scene-2)">
+<rect x="66" y="741" width="605" height="237" rx="0" fill="rgb(84,84,84)" stroke="none" stroke-width="1.5"/>
+<rect x="66" y="921.12" width="605" height="56.879999999999995" rx="0" fill="rgb(62,62,62)" stroke="none" stroke-width="1.5"/>
+<rect x="394" y="763" width="246" height="153" rx="0" fill="rgb(255,255,255)" stroke="none" stroke-width="1.5"/>
+<polygon points="403,906 459,805 523,906" fill="rgb(255,255,255)"/>
+<polygon points="503,906 567,787 630,906" fill="rgb(255,255,255)"/>
+<rect x="387" y="756" width="260" height="7" rx="0" fill="rgb(148,148,148)" stroke="none" stroke-width="1.5"/>
+<rect x="387" y="916" width="260" height="7" rx="0" fill="rgb(148,148,148)" stroke="none" stroke-width="1.5"/>
+<rect x="387" y="756" width="7" height="167" rx="0" fill="rgb(148,148,148)" stroke="none" stroke-width="1.5"/>
+<rect x="640" y="756" width="7" height="167" rx="0" fill="rgb(148,148,148)" stroke="none" stroke-width="1.5"/>
+<rect x="514" y="763" width="6" height="153" rx="0" fill="rgb(148,148,148)" stroke="none" stroke-width="1.5"/>
+<ellipse cx="231" cy="905" rx="86" ry="81" fill="rgb(59,59,59)"/>
+<ellipse cx="231" cy="827" rx="43" ry="54" fill="rgb(119,119,119)"/>
+<ellipse cx="231" cy="782" rx="39" ry="17" fill="rgb(43,43,43)"/>
+<ellipse cx="218" cy="821" rx="3.6" ry="3.6" fill="rgb(48,48,48)"/>
+<ellipse cx="245" cy="821" rx="3.6" ry="3.6" fill="rgb(48,48,48)"/>
+<line x1="220" y1="850" x2="244" y2="850" stroke="rgb(79,79,79)" stroke-width="3"/>
+</g>
+<text x="725" y="795" fill="#182d43" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" font-weight="600" text-anchor="start"><tspan x="725" dy="0">较高曝光</tspan></text>
+<text x="725" y="847" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="start"><tspan x="725" dy="0">前景人脸更亮</tspan><tspan x="725" dy="38">窗外部分信号截断</tspan></text>
+<text x="725" y="944" fill="#2764aa" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" text-anchor="start"><tspan x="725" dy="0">曝光倍数 ×2.5</tspan></text>
+<text x="560" y="1065" fill="#2764aa" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" text-anchor="middle"><tspan x="560" dy="0">关注某一区域，并不会让其他区域免受曝光变化的影响。</tspan></text>
+<text x="48" y="1105" fill="#52647a" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="400" text-anchor="start"><tspan x="48" dy="0">原创合成示意 · 非相机实拍、非海思输出，也不代表三种 AE 策略必然产生这些倍数。</tspan></text>
+</svg>
