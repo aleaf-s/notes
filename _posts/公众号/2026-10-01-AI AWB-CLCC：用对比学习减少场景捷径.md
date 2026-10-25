@@ -70,14 +70,14 @@ M_{BC}=w\mathbf{I}+(1-w)M_{BA}
 \]
 
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img3@main/2026/10/01/1790840552046-535d0f74-a0cd-4034-9fd6-4e54c326810b.png)
+![CLCC 通过光源变换与矩阵插值构造训练样本](https://fastly.jsdelivr.net/gh/bucketio/img3@main/2026/10/01/1790840552046-535d0f74-a0cd-4034-9fd6-4e54c326810b.png)
 
 ---
 剩下的就是计算基准图像与正负样本之间的损失：首先对投影后的特征向量做余弦相似度打分，再用 InfoNCE 计算损失，两种正样本与两类负样本集合，组合成四项损失，然后求和，如下图。
 
 和常规对比学习没什么差异，这里就不赘述了。
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img3@main/2026/10/01/1790839217802-62f913cd-f2ed-4d65-b933-cbb7b4169dfb.png)
+![CLCC 正负样本组合与对比损失计算](https://fastly.jsdelivr.net/gh/bucketio/img3@main/2026/10/01/1790839217802-62f913cd-f2ed-4d65-b933-cbb7b4169dfb.png)
 
 
 ## 总结
@@ -85,7 +85,7 @@ M_{BC}=w\mathbf{I}+(1-w)M_{BA}
 
 下面是在NUS-8数据集上，FC4网络基础上加入对比学习后的效果光源预测角误差
 
-![](https://fastly.jsdelivr.net/gh/bucketio/img6@main/2026/10/01/1790827992766-a8d79554-cf37-4597-ac8f-e91ffc60ee3b.png)
+![NUS-8 数据集上 FC4 与 CLCC 的光源预测角误差对比](https://fastly.jsdelivr.net/gh/bucketio/img6@main/2026/10/01/1790827992766-a8d79554-cf37-4597-ac8f-e91ffc60ee3b.png)
 
 平均角误差从$2.23^\circ$ 降到 $1.84^\circ$，大概降低17%，还是有明显改进的。
 
@@ -100,4 +100,3 @@ M_{BC}=w\mathbf{I}+(1-w)M_{BA}
 ## 参考
 
 [1]. Yi-Chen Lo et al. [CLCC: Contrastive Learning for Color Constancy]. CVPR 2021.
-  
