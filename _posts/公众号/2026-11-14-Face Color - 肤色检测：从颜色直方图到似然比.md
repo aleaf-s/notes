@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "肤色检测：从颜色直方图到似然比"
+title: "Face Color - 肤色检测：从颜色直方图到似然比"
 date: 2026-11-14
 category: "公众号"
 ---

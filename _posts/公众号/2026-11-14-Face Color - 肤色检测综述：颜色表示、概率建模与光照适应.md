@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "肤色检测综述：颜色表示、概率建模与光照适应"
+title: "Face Color - 肤色检测综述：颜色表示、概率建模与光照适应"
 date: 2026-11-14
 category: "公众号"
 ---
