@@ -75,9 +75,11 @@ Invoke-Check `
   -Pattern '!\[[^\]]*\]\((?!https?:|/|\{\{|data:|#)[^)]+\)' `
   -Paths @("_posts")
 
+# Consume preceding dollar-delimited pairs from the start of the line so a
+# closing dollar cannot pair with the next formula across a table separator.
 Invoke-Check `
   -Name "No inline/block math with raw pipe characters" `
-  -Pattern '\$[^\r\n$]*(?<!\\)\|[^\r\n$]*\$|\$\$[^\r\n$]*(?<!\\)\|[^\r\n$]*\$\$' `
+  -Pattern '^(?:[^$\r\n]|\$[^$\r\n]*\$)*?\${1,2}[^\r\n$]*(?<!\\)\|[^\r\n$]*\${1,2}' `
   -Paths @("_posts")
 
 Invoke-Check `
